@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "vue/html-indent": "off",
+    "vue/html-closing-bracket-spacing": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-extra-semi": "off",
+    "func-call-spacing": "off"
+  }
+}
