@@ -34,7 +34,7 @@
   <section class="best feed-item">
     <div class="feed-item__title">
       <hr>
-      <h3>Best selers</h3>
+      <h3>Best sales</h3>
       <hr>
     </div>
     <BestSellers/>
@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import BestSellers from '@/components/home/BestSellers.vue';
+import BestSellers from "@/components/home/BestSales.vue";
 </script>
 
 <style scoped lang="scss">
