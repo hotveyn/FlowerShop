@@ -1,20 +1,27 @@
 <template>
-  <div class="header-container">
-    <TheHeader/>
+  <TheHeader/>
+  <div class="page">
+    <div class="page-container">
+      <slot/>
+    </div>
   </div>
-  <slot/>
 </template>
 
 <script setup lang="ts">
-import TheHeader from "@/components/header/TheHeader.vue";
+import TheHeader from '@/components/header/TheHeader.vue';
 
 </script>
 
 <style scoped lang="scss">
-.header-container{
+.page {
+  background-color: rgba(242, 242, 242, 1);
+  padding: 70px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.page-container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-
 }
 </style>
