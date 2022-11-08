@@ -37,12 +37,16 @@
       <div class="reg-cart">
         <RouterLink to="/">
           <div class="log-button">
-            <img src="@/icons/log.svg" alt="log">
+            <img
+                src="@/icons/log.svg"
+                alt="log">
           </div>
         </RouterLink>
         <RouterLink to="/">
           <div class="cart-button">
-            <img src="@/icons/cart.svg" alt="log">
+            <img
+                src="@/icons/cart.svg"
+                alt="log">
           </div>
         </RouterLink>
       </div>
@@ -74,27 +78,29 @@ const route = useRoute();
   }
 
 
-
   h1 {
     font-size: 32px;
     font-weight: 500;
   }
 
-  .nav-bar ul{
+  .nav-bar ul {
     @include myFlex();
 
     .rt-link {
       font-size: 23px;
       transition: font-weight 0.1s;
+
       &:not(:first-child) {
         margin-left: 20px;
       }
     }
 
   }
+
   .orange-text {
     color: $myOrange;
   }
+
   .reg-cart {
     @include myFlex();
     width: 70px;
