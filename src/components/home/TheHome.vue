@@ -1,7 +1,7 @@
 <template>
   <section class="welcome">
     <div class="browse">
-      <!--   Поставить символьный шрифт: Критичность 1-->
+      <!--   Поставить символьный шрифт. Критичность: 1-->
       <h2>Flowers, 🌻 what the world needs </h2>
       <p class="browse__text">
         Browse between hounders of flowers
@@ -39,10 +39,19 @@
     </div>
     <BestSellers/>
   </section>
+  <section class="reviews feed-item">
+    <div class="feed-item__title">
+      <hr>
+      <h3>Latest reviews</h3>
+      <hr>
+    </div>
+    <LatestReviews/>
+  </section>
 </template>
 
 <script setup lang="ts">
 import BestSellers from "@/components/home/BestSales.vue";
+import LatestReviews from "@/components/home/LatestReviews.vue";
 </script>
 
 <style scoped lang="scss">
