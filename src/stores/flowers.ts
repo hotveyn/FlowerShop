@@ -26,7 +26,7 @@ export const useFlowersStore = defineStore("flowers", {
                 description: "For whatever things were written before were written for our learning, that we through the patience and comfort of the Scriptures might have hope.",
                 favorite: false,
                 rate: 0,
-                popular: 3,
+                popular: 0,
             },
             {
                 id: 3,
@@ -47,6 +47,17 @@ export const useFlowersStore = defineStore("flowers", {
                 favorite: false,
                 rate: 0,
                 popular: 6,
+                reviews: [
+                    // Сделать ссылкой на единый объект
+                    // как в сторе review так и здесть
+                    {
+                        id: 1,
+                        name: "Aneta",
+                        description: "i’m buying flower from them every weak, always fresh flowers and beutiful😍🌻... love’em so nuch..keep going 💯💯",
+                        stars: 4,
+                        img: "atena.png",
+                    },
+                ],
             },
             {
                 id: 5,
@@ -63,7 +74,7 @@ export const useFlowersStore = defineStore("flowers", {
     actions: {
         getFlowers() {
             return this.flowers;
-        }
+        },
     },
 });
 

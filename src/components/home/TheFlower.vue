@@ -1,8 +1,9 @@
 <template>
   <div class="flower">
     <div class="img-wrapper">
+      <!-- Фикс бага с отображение. Критичность: 3 -->
       <img
-          :src="'src/img/flowers/' + props.flower.img"
+          :src="`src/img/flowers/${props.flower.img}`"
           :alt="props.flower.name">
     </div>
     <p class="flower__name">
@@ -28,6 +29,8 @@ import {IFlower} from "@/interfaces/IFlower";
 const props = defineProps<{
   flower: IFlower;
 }>();
+
+
 </script>
 
 <style scoped lang="scss">
@@ -38,13 +41,14 @@ const props = defineProps<{
   padding: 17px;
   border-radius: 5px;
 
-  .img-wrapper  {
+  .img-wrapper {
     height: 230px;
     width: 250px;
     margin-bottom: 9px;
     border-radius: 5px;
     overflow: hidden;
-    img{
+
+    img {
       object-fit: cover;
       width: 100%;
       height: 100%;
