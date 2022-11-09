@@ -16,7 +16,7 @@ export const useFlowersStore = defineStore("flowers", {
                 description: "For the Lord takes delight in His people; He crowns the humble and salvation.",
                 favorite: false,
                 rate: 0,
-                popular: 3
+                popular: 2,
             },
             {
                 id: 2,
@@ -26,7 +26,7 @@ export const useFlowersStore = defineStore("flowers", {
                 description: "For whatever things were written before were written for our learning, that we through the patience and comfort of the Scriptures might have hope.",
                 favorite: false,
                 rate: 0,
-                popular: 2
+                popular: 3,
             },
             {
                 id: 3,
@@ -36,7 +36,7 @@ export const useFlowersStore = defineStore("flowers", {
                 description: "Even though I walk through the valley of the shadow of death, I fear no evil, for You are with me; Your rod and Your staff, they comfort me.",
                 favorite: false,
                 rate: 0,
-                popular: 1
+                popular: 1,
             },
             {
                 id: 4,
@@ -46,14 +46,24 @@ export const useFlowersStore = defineStore("flowers", {
                 description: "Then shall the righteous shine forth as the sun in the kingdom of the Father.",
                 favorite: false,
                 rate: 0,
-                popular: 0
+                popular: 6,
+            },
+            {
+                id: 5,
+                img: "blackWidow.png",
+                name: "Black Widow",
+                price: 20,
+                description: "Even though I walk through the valley of the shadow as the sun in the kingdom of the Father.",
+                favorite: false,
+                rate: 0,
+                popular: 2,
             },
         ],
     }),
-    actions:{
-        getFlowers(){
+    actions: {
+        getFlowers() {
             return this.flowers;
         }
-    }
+    },
 });
 
