@@ -1,5 +1,7 @@
 <template>
-  <div class="flower">
+  <div
+      v-show="isShowFlowerInShopBySearchedText"
+      class="flower">
     <div class="img-wrapper">
       <!-- Фикс бага с отображение. Критичность: 3 -->
       <img
@@ -21,11 +23,30 @@
 <script setup lang="ts">
 import {IFlower} from "@/interfaces/IFlower";
 import AddToCart from "@/components/AddToCart.vue";
+import {useShopStore} from "@/stores/shop";
+import {computed} from "vue";
+import {useRoute} from "vue-router";
 
 const props = defineProps<{
   flower: IFlower;
 }>();
 
+const route = useRoute();
+
+const shopStore = useShopStore();
+
+const isShowFlowerInShopBySearchedText = computed((): boolean => {
+  if (route.name === "shop") {
+    const searchedText = shopStore.search.trim().toLowerCase();
+    if (searchedText !== "") {
+      const flowerName = props.flower?.name.toLowerCase();
+      return flowerName.search(searchedText) !== -1;
+    } else {
+      return true;
+    }
+  }
+  return true;
+});
 
 </script>
 
