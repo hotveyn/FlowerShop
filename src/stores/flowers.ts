@@ -75,7 +75,7 @@ export const useFlowersStore = defineStore("flowers", {
         getFlowers(): IFlower[]{
             return this.flowers;
         },
-        upFlowerRate(flowerToUpRate: IFlower){
+        upFlowerPopularRate(flowerToUpRate: IFlower){
             const flowerToUpRateTemp = this.flowers.filter((value)=>{
                 return value === flowerToUpRate;
             });
