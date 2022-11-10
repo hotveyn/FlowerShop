@@ -1,22 +1,22 @@
 <template>
-    <button
-        class="button-add"
-        @click="buy()">
-      <img
-          :class="{'bought': disabled}"
-          src="@/icons/cart.svg"
-          alt="cart">
-      Add to cart
-    </button>
+  <button
+      class="button-add"
+      @click="toCart()">
+    <img
+        :class="{'bought': disabled}"
+        src="@/icons/cart.svg"
+        alt="cart">
+    Add to cart
+  </button>
 </template>
- 
-<script setup lang="ts">
-import {IFlower} from "@/interfaces/IFlower";
-import {useFlowersStore} from "@/stores/flowers";
-import {useCartStore} from "@/stores/cart";
-import {ref} from "vue";
 
-const flowerStore = useFlowersStore();
+<script setup lang="ts">
+import {IFlower} from '@/interfaces/IFlower';
+// import {useFlowersStore} from "@/stores/flowers";
+import {useCartStore} from '@/stores/cart';
+import {ref} from 'vue';
+
+// const flowerStore = useFlowersStore();
 const cartStore = useCartStore();
 
 const props = defineProps<{
@@ -33,8 +33,8 @@ function warnDisabled() {
   }, 300);
 }
 
-function buy(){
-  flowerStore.upFlowerRate(props.flowerToBut);
+function toCart() {
+  // flowerStore.upFlowerPopularRate(props.flowerToBut);
   cartStore.addNewFlowerInCart(props.flowerToBut);
   warnDisabled();
 }
@@ -42,6 +42,7 @@ function buy(){
 
 <style scoped lang="scss">
 @import "@/mixins.scss";
+
 .buy {
   @include myFlex();
 
@@ -62,17 +63,24 @@ function buy(){
       height: 20px;
       margin-right: 5px;
     }
-    .bought{
-      animation: bought-cart 0.5s both;
+
+    .bought {
+      animation: bought-cart 0.3s linear;
     }
   }
 }
+
 @keyframes bought-cart {
-  0%, 100%{
-    transform: scale(1,1) rotate(0) translate(0, 0);
+
+  10%, 70%{
+    transform: scale(1, 1);
   }
-  50%{
-    transform: scale(1.1,1.1) rotate(-20deg) translate(0, -8px);
+  40% {
+    transform: scale(1.3, 1.3);
   }
+  90%{
+    transform: scale(1.1, 1.1);
+  }
+
 }
 </style>

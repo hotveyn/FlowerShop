@@ -36,6 +36,11 @@ const props = defineProps<{
   background-color: white;
   padding: 17px;
   border-radius: 5px;
+  transition: box-shadow 0.5s;
+
+  &:hover {
+    box-shadow: 0 0 15px $myGrey;
+  }
 
   .img-wrapper {
     height: 230px;
