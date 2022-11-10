@@ -112,15 +112,31 @@ export const useFlowersStore = defineStore("flowers", {
         ],
     }),
     actions: {
-        getFlowers(): IFlower[]{
+        getFlowers(): IFlower[] {
             return this.flowers;
         },
-        upFlowerPopularRate(flowerToUpRate: IFlower){
-            const flowerToUpRateTemp = this.flowers.filter((value)=>{
+        getSortedFlowers(sortMod: string): IFlower[] {
+            // Fix: Тут будет говнокод и наплевательское отношение к DRY
+            const tempFlowers: IFlower[] = [...this.flowers];
+            switch (sortMod) {
+                case "Popular":
+                    return tempFlowers.sort((a, b) => (a.popular < b.popular) ? 1 : ((b.popular < a.popular) ? -1 : 0));
+                case "Name":
+                    return tempFlowers.sort((a, b) => (a.name < b.name) ? 1 : ((b.name < a.name) ? -1 : 0));
+                case "Rate":
+                    return tempFlowers.sort((a, b) => (a.rate < b.rate) ? 1 : ((b.rate < a.rate) ? -1 : 0));
+                case "Price":
+                    return tempFlowers.sort((a, b) => (a.price < b.price) ? 1 : ((b.price < a.price) ? -1 : 0));
+                default:
+                    return this.flowers;
+            }
+        },
+        upFlowerPopularRate(flowerToUpRate: IFlower) {
+            const flowerToUpRateTemp = this.flowers.filter((value) => {
                 return value === flowerToUpRate;
             });
             flowerToUpRateTemp[0].popular += 1;
-        }
+        },
     },
 });
 
