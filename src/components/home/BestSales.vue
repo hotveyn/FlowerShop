@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import TheFlower from "@/components/home/TheFlower.vue";
+import TheFlower from "@/components/TheFlower.vue";
 import {useFlowersStore} from "@/stores/flowers";
 import {computed} from "vue";
 

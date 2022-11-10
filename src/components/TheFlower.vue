@@ -13,18 +13,14 @@
       <p class="buy__price">
         {{ props.flower.price }}$
       </p>
-      <button class="buy__add">
-        <img
-            src="@/icons/cart.svg"
-            alt="cart">
-        Add to cart
-      </button>
+      <AddToCart :flower-to-but="props.flower"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import {IFlower} from "@/interfaces/IFlower";
+import AddToCart from "@/components/AddToCart.vue";
 
 const props = defineProps<{
   flower: IFlower;
@@ -68,19 +64,6 @@ const props = defineProps<{
       color: rgba(131, 131, 131, 1);
     }
 
-    .buy__add {
-      cursor: pointer;
-      border: 0;
-      background-color: white;
-      @include myFlex();
-      color: $myOrange;
-      font-size: 18px;
-
-      img {
-        height: 20px;
-        margin-right: 5px;
-      }
-    }
   }
 }
 </style>

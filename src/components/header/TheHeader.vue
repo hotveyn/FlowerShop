@@ -76,6 +76,12 @@ const route = useRoute();
     text-decoration: none;
     color: black;
   }
+  li{
+    transition: color 0.2s;
+    &:hover {
+      color: $myOrange;
+    }
+  }
 
 
   h1 {
