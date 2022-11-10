@@ -9,17 +9,17 @@
 
 <script setup lang="ts">
 import TheFlower from "@/components/TheFlower.vue";
-import {useFlowersStore} from "@/stores/flowers";
+import {useShopStore} from "@/stores/shop";
 import {computed} from "vue";
 
-const flowersStore = useFlowersStore();
+const shopStore = useShopStore();
 
 
-let sortedFlowersByPopular = computed(()=>{
-  const sortedFlowers = [...flowersStore.getSortedFlowers("Popular")];
+const sortedFlowersByPopular = computed(()=>{
+  const sortedFlowers = [...shopStore.getFlowersByFilterMod("Popular")];
   sortedFlowers.length = 4;
   return sortedFlowers;
-})
+});
 
 </script>
 

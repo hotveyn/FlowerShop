@@ -1,7 +1,7 @@
 <template>
   <div class="flowers-items">
     <TheFlower
-        v-for="i in flowersStore.getFlowers()"
+        v-for="i in shopStore.getFlowersByFilterMod(shopStore.filterMod)"
         :key="i.id"
         :flower="i"/>
   </div>
@@ -9,9 +9,9 @@
 
 <script setup lang="ts">
 import TheFlower from "@/components/TheFlower.vue";
-import {useFlowersStore} from "@/stores/flowers";
+import {useShopStore} from "@/stores/shop";
 
-const flowersStore = useFlowersStore();
+const shopStore = useShopStore();
 </script>
 
 <style scoped lang="scss">
