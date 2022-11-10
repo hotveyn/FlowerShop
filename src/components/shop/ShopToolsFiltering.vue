@@ -58,16 +58,25 @@
 </template>
 
 <script setup lang="ts">
-import {Ref, ref} from "vue";
+import {Ref, ref, watch} from "vue";
+import {useShopStore} from "@/stores/shop";
 
-// Возможно тут нужен computed ну я хуй знает
+type FilterType = "Name" | "Popular" | "Rate" | "Price";
+
+
 const isRadioShow: Ref<boolean> = ref(false);
-
+// Возможно тут нужен computed ну я хуй знает
 function showFilters() {
   isRadioShow.value = !isRadioShow.value;
 }
 
-const filterMod: Ref<string> = ref("Name");
+const filterMod: Ref<FilterType> = ref("Name");
+
+const shopStore = useShopStore();
+
+watch(filterMod, (newFilterMod: FilterType)=>{
+  shopStore.setFilterMod(newFilterMod);
+});
 </script>
 
 <style scoped lang="scss">
