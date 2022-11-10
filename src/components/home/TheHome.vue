@@ -6,9 +6,11 @@
       <p class="browse__text">
         Browse between hounders of flowers
       </p>
-      <button class="browse__button">
-        Browse
-      </button>
+      <router-link to="/shop">
+        <button class="browse__button">
+          Browse
+        </button>
+      </router-link>
     </div>
     <div class="flowers">
       <img

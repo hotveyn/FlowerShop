@@ -39,7 +39,7 @@ const props = defineProps<{
   transition: box-shadow 0.5s;
 
   &:hover {
-    box-shadow: 0 0 15px $myGrey;
+    box-shadow: 0 0 15px #bdbdbd;
   }
 
   .img-wrapper {

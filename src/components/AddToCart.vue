@@ -11,10 +11,10 @@
 </template>
 
 <script setup lang="ts">
-import {IFlower} from '@/interfaces/IFlower';
+import {IFlower} from "@/interfaces/IFlower";
 // import {useFlowersStore} from "@/stores/flowers";
-import {useCartStore} from '@/stores/cart';
-import {ref} from 'vue';
+import {useCartStore} from "@/stores/cart";
+import {ref} from "vue";
 
 // const flowerStore = useFlowersStore();
 const cartStore = useCartStore();
