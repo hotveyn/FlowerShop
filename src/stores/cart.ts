@@ -5,8 +5,7 @@ interface State {
     flowersInCart: IFlower[];
 }
 
-
-export const useReviewStore = defineStore("review", {
+export const useCartStore = defineStore("cart", {
     state: (): State => ({
         flowersInCart: [],
     }),
