@@ -22,7 +22,7 @@
           </router-link>
           <router-link
               class="rt-link"
-              to="/">
+              to="/shop">
             <li class="links__info">
               Shop
             </li>

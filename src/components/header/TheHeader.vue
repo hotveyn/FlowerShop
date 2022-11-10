@@ -15,7 +15,7 @@
             <li>Home</li>
           </RouterLink>
           <RouterLink
-              to="/"
+              to="/shop"
               :class="{'orange-text':route.name === 'shop'}"
               class="rt-link">
             <li>Shop</li>
