@@ -1,9 +1,9 @@
 <template>
   <div class="filter">
     <button
-        @click="showFilters()"
         :class="{'button-border':isRadioShow}"
-        class="shop__filter shop__button">
+        class="shop__filter shop__button"
+        @click="showFilters()">
       <img
           src="@/icons/filter.png"
           alt="filter">
@@ -14,42 +14,42 @@
         class="radio-button-group">
       <label>
         <input
+            v-model="filterMod"
             type="radio"
             name="category"
             value="Name"
             class="real-radio"
-            checked
-            v-model="filterMod">
+            checked>
         <span class="custom-radio"/>
         Name
       </label>
       <label>
         <input
+            v-model="filterMod"
             type="radio"
             name="category"
             value="Rate"
-            class="real-radio"
-            v-model="filterMod">
+            class="real-radio">
         <span class="custom-radio"/>
         Rate
       </label>
       <label>
         <input
+            v-model="filterMod"
             type="radio"
             name="category"
             value="Popular"
-            class="real-radio"
-            v-model="filterMod">
+            class="real-radio">
         <span class="custom-radio"/>
         Popular
       </label>
       <label>
         <input
+            v-model="filterMod"
             type="radio"
             name="category"
             value="Price"
-            class="real-radio"
-            v-model="filterMod">
+            class="real-radio">
         <span class="custom-radio"/>
         Price
       </label>
@@ -58,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import {Ref, ref} from 'vue';
+import {Ref, ref} from "vue";
 
 // Возможно тут нужен computed ну я хуй знает
 const isRadioShow: Ref<boolean> = ref(false);
@@ -67,7 +67,7 @@ function showFilters() {
   isRadioShow.value = !isRadioShow.value;
 }
 
-let filterMod: Ref<string> = ref("Name");
+const filterMod: Ref<string> = ref("Name");
 </script>
 
 <style scoped lang="scss">

@@ -22,6 +22,7 @@ const latestReviews = computed(() => {
   return tempReviews;
 });
 
+
 </script>
 
 <style scoped lang="scss">
