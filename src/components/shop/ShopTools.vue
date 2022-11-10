@@ -19,7 +19,7 @@ import ShopToolsCheep from  "@/components/shop/ShopToolsCheep.vue";
   @include myFlex();
   width: 100%;
   border-radius: 5px;
-  padding: 30px 20px;
+  padding: 20px 20px;
   background-color: white;
 
 }
