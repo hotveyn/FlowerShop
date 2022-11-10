@@ -13,14 +13,13 @@ import {useFlowersStore} from "@/stores/flowers";
 import {computed} from "vue";
 
 const flowersStore = useFlowersStore();
-const flowers = flowersStore.getFlowers();
 
-const sortedFlowersByPopular = computed(() => {
-  const tempFlowers = [...flowers];
-  tempFlowers.sort((a, b) => (a.popular < b.popular) ? 1 : ((b.popular < a.popular) ? -1 : 0));
-  tempFlowers.length = 4;
-  return tempFlowers;
-});
+
+let sortedFlowersByPopular = computed(()=>{
+  const sortedFlowers = [...flowersStore.getSortedFlowers("Popular")];
+  sortedFlowers.length = 4;
+  return sortedFlowers;
+})
 
 </script>
 
