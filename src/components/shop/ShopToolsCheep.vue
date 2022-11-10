@@ -1,5 +1,7 @@
 <template>
-  <button class="shop__cheep shop__button">
+  <button
+      class="shop__cheep shop__button"
+      @click="changeCheep()">
     <img
         src="@/icons/cheep.png"
         alt="cheep">
@@ -8,7 +10,14 @@
 </template>
 
 <script setup lang="ts">
+import {useShopStore} from "@/stores/shop";
 
+const shopStore = useShopStore();
+
+// Спросить у Сани нужно ли тут использовать watch вместо обычный функции
+function changeCheep():void{
+  shopStore.cheep = !shopStore.cheep;
+}
 </script>
 
 <style scoped lang="scss">
