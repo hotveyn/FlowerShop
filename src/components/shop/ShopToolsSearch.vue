@@ -1,6 +1,7 @@
 <template>
   <input
       id="shop-search"
+      v-model.trim="shopStore.search"
       class="shop__search"
       type="search"
       name="shop-search"
@@ -8,6 +9,22 @@
 </template>
 
 <script setup lang="ts">
+import {useShopStore} from "@/stores/shop";
+// import {Ref, ref, watch} from "vue";
+
+const shopStore = useShopStore();
+
+
+// Fix: строка сбрасывается если выйти из шопа и обратно в него зайти,
+// поэтому происходит баг с отображением карточек с цветами
+// если связать search напрямую со shopStore то бага не будет
+// но связать с полем стора что либо из компонента нельзя(так Саня говорил)
+
+
+// const searchedText:Ref<string> = ref("");
+// watch(searchedText,(newSearchedText)=>{
+//   shopStore.search = newSearchedText;
+// });
 </script>
 
 <style scoped lang="scss">
