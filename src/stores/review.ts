@@ -40,7 +40,7 @@ export const useReviewStore = defineStore("review", {
         ],
     }),
     actions: {
-        getReviews() {
+        getReviews():IReview[] {
             return this.reviews;
         },
     },

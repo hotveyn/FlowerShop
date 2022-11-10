@@ -72,7 +72,7 @@ export const useFlowersStore = defineStore("flowers", {
         ],
     }),
     actions: {
-        getFlowers() {
+        getFlowers(): IFlower[]{
             return this.flowers;
         },
     },
