@@ -117,6 +117,12 @@ export const useFlowersStore = defineStore("flowers", {
                 return value === flowerToUpRate;
             });
             flowerToUpRateTemp[0].popular += 1;
+        },
+        flowerToFavorite(flower: IFlower){
+            const flowerToFavoriteTemp = this.flowers.filter((value) => {
+                return value === flower;
+            });
+            flowerToFavoriteTemp[0].favorite = !flowerToFavoriteTemp[0].favorite;
         }
     },
     getters:{
