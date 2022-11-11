@@ -1,6 +1,8 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 import ShopPage from "@/pages/ShopPage.vue";
+import FlowerFull from "@/components/FlowerFull.vue";
+
 
 const routes: RouteRecordRaw[] = [
     {
@@ -13,6 +15,11 @@ const routes: RouteRecordRaw[] = [
         name: "shop",
         component: ShopPage,
     },
+    {
+        path:"/shop/flower:id",
+        name:"flower:id",
+        component: FlowerFull
+    }
 ];
 
 export default createRouter({

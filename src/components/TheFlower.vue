@@ -1,23 +1,27 @@
 <template>
-  <div
-      v-show="isShowFlowerInShopBySearchedText"
-      class="flower">
-    <div class="img-wrapper">
-      <!-- Фикс бага с отображение. Критичность: 3 -->
-      <img
-          :src="`src/img/flowers/${props.flower.img}`"
-          :alt="props.flower.name">
-    </div>
-    <p class="flower__name">
-      {{ props.flower.name }}
-    </p>
-    <div class="buy">
-      <p class="buy__price">
-        {{ props.flower.price }}$
+  <router-link
+      class="rt-link"
+      :to="'/shop/flower'+props.flower.id">
+    <div
+        v-show="isShowFlowerInShopBySearchedText"
+        class="flower">
+      <div class="img-wrapper">
+        <!-- Фикс бага с отображение. Критичность: 3 -->
+        <img
+            :src="`src/img/flowers/${props.flower.img}`"
+            :alt="props.flower.name">
+      </div>
+      <p class="flower__name">
+        {{ props.flower.name }}
       </p>
-      <AddToCart :flower-to-but="props.flower"/>
+      <div class="buy">
+        <p class="buy__price">
+          {{ props.flower.price }}$
+        </p>
+        <AddToCart :flower-to-but="props.flower"/>
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script setup lang="ts">
@@ -52,6 +56,11 @@ const isShowFlowerInShopBySearchedText = computed((): boolean => {
 
 <style scoped lang="scss">
 @import "@/mixins.scss";
+
+.rt-link{
+  text-decoration: none;
+  color: black;
+}
 
 .flower {
   background-color: white;
