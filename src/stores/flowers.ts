@@ -117,7 +117,13 @@ export const useFlowersStore = defineStore("flowers", {
                 return value === flowerToUpRate;
             });
             flowerToUpRateTemp[0].popular += 1;
-        },
+        }
+    },
+    getters:{
+        getFlowerById:(state)=>{
+            return (flowerId:number) => state.flowers.filter((a) => a.id === flowerId)[0];
+        }
     }
+
 });
 
