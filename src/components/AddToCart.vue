@@ -43,42 +43,39 @@ function toCart() {
 <style scoped lang="scss">
 @import "@/mixins.scss";
 
-.buy {
-  @include myFlex();
+.buy__price {
+  font-size: 18px;
+  color: rgba(131, 131, 131, 1);
+}
 
-  .buy__price {
-    font-size: 18px;
-    color: rgba(131, 131, 131, 1);
+.button-add {
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  @include myFlex();
+  color: $myOrange;
+  font-size: 18px;
+
+  img {
+    height: 20px;
+    margin-right: 5px;
   }
 
-  .button-add {
-    cursor: pointer;
-    border: 0;
-    background-color: white;
-    @include myFlex();
-    color: $myOrange;
-    font-size: 18px;
-
-    img {
-      height: 20px;
-      margin-right: 5px;
-    }
-
-    .bought {
-      animation: bought-cart 0.3s linear;
-    }
+  .bought {
+    animation: bought-cart 0.3s linear;
   }
 }
 
+
 @keyframes bought-cart {
 
-  10%, 70%{
+  10%, 70% {
     transform: scale(1, 1);
   }
   40% {
     transform: scale(1.3, 1.3);
   }
-  90%{
+  90% {
     transform: scale(1.1, 1.1);
   }
 
