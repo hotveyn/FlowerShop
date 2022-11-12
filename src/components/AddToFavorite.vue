@@ -13,9 +13,13 @@
 <script setup lang="ts">
 import {IFlower} from "@/interfaces/IFlower";
 import {useFlowersStore} from "@/stores/flowers";
+import {useUsersStore} from '@/stores/users';
 import {ref} from "vue";
+import {useRouter} from 'vue-router';
 
+const usersStore = useUsersStore();
 const flowerStore = useFlowersStore();
+const router = useRouter();
 
 const props = defineProps<{
   flowerToBut: IFlower;
@@ -24,8 +28,12 @@ const props = defineProps<{
 const isFavorite = ref(flowerStore.getFlowerById(props.flowerToBut.id).favorite);
 
 function makeFavorite() {
-  flowerStore.flowerToFavorite(props.flowerToBut);
-  isFavorite.value = !isFavorite.value;
+  if(usersStore.authorizedUser){
+    flowerStore.flowerToFavorite(props.flowerToBut);
+    isFavorite.value = !isFavorite.value;
+  }else{
+    router.push("/login")
+  }
 }
 </script>
 
