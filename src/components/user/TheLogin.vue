@@ -56,7 +56,7 @@
 </template>
 <script setup lang="ts">
 import {Ref, ref} from "vue";
-import {useUsersStore} from "@/stores/Users";
+import {useUsersStore} from "@/stores/users";
 import {useRouter} from "vue-router";
 
 const usersStore = useUsersStore();

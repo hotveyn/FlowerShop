@@ -66,7 +66,7 @@
 </template>
 <script setup lang="ts">
 import {Ref, ref} from "vue";
-import {useUsersStore} from "@/stores/Users";
+import {useUsersStore} from "@/stores/users";
 import {useRouter} from "vue-router";
 
 const usersStore = useUsersStore();
@@ -79,6 +79,7 @@ const regPassword: Ref<string> = ref("");
 
 function reg(): void {
   // Fix: забил на DRY
+  // Fix: пользователь может создать профиль не с уникальной почтой
   if (regMail.value !== "" && regName.value !== "" && regPassword.value !== "") {
     usersStore.regUser(regName.value, regMail.value, regPassword.value);
     router.push("/");
