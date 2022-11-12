@@ -12,8 +12,9 @@ export const useUsersStore = defineStore("users", {
     state: (): State => ({
         users: [
             {
-                username: "Hotvein",
-                email: "hotveyn@gmail.com",
+                id:1,
+                username: "admin",
+                email: "admin@gmail.com",
                 phone: 88005553535,
                 password: "admin",
                 aboutMe: "I am a God. How can you kill a God?",
@@ -41,13 +42,14 @@ export const useUsersStore = defineStore("users", {
         },
         regUser(regUserName: string, regEmail: string, regPassword: string): void {
             const newUser: IUser = {
+                id: this.users.length + 1,
                 username: regUserName,
                 email: regEmail,
                 password: regPassword,
             };
             this.authorizedUser = newUser;
             this.users.push(newUser);
-        },
+        }
     },
     getters: {
         getAuthorizedUser(): IUser | undefined {
