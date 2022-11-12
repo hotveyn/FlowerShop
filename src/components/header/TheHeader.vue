@@ -22,12 +22,6 @@
           </RouterLink>
           <RouterLink
               to="/"
-              :class="{'orange-text':route.name === 'blog'}"
-              class="rt-link">
-            <li>Blog</li>
-          </RouterLink>
-          <RouterLink
-              to="/"
               :class="{'orange-text':route.name === 'about'}"
               class="rt-link">
             <li>About</li>
@@ -35,7 +29,7 @@
         </ul>
       </nav>
       <div class="reg-cart">
-        <RouterLink to="/">
+        <RouterLink :to="logButtonLink">
           <div class="log-button">
             <img
                 src="@/icons/log.svg"
@@ -55,9 +49,17 @@
 </template>
 
 <script setup lang="ts">
+import {computed} from 'vue';
 import {useRoute} from "vue-router";
+import {useUsersStore} from '@/stores/users';
+
+const usersStore = useUsersStore();
 
 const route = useRoute();
+
+let logButtonLink = computed(()=>{
+  return usersStore.getAuthorizedUser ? "/profile" : "/login";
+})
 </script>
 
 <style scoped lang="scss">
