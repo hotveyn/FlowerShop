@@ -1,5 +1,5 @@
 $myOrange: rgba(255, 143, 82, 1);
-$myGrey: rgba(217, 217, 217, 1);
+$myGrey: rgb(196, 196, 196);
 @mixin myFlex($jc:space-between,$ai:center,$fd:row) {
   display: flex;
   justify-content: $jc;
