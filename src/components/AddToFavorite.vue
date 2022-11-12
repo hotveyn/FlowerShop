@@ -21,7 +21,7 @@ const props = defineProps<{
   flowerToBut: IFlower;
 }>();
 
-const isFavorite = ref(false);
+const isFavorite = ref(flowerStore.getFlowerById(props.flowerToBut.id).favorite);
 
 function makeFavorite() {
   flowerStore.flowerToFavorite(props.flowerToBut);
