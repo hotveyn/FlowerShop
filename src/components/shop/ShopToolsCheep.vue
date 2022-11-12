@@ -1,6 +1,7 @@
 <template>
   <button
-      class="shop__cheep shop__button"
+      :class="{'active':shopStore.cheep}"
+      class="cheep-button"
       @click="changeCheep()">
     <img
         src="@/icons/cheep.png"
@@ -23,7 +24,7 @@ function changeCheep():void{
 <style scoped lang="scss">
 @import "@/mixins.scss";
 
-.shop__button {
+.cheep-button {
   padding: 10px 15px;
   border: 3px solid white;
   border-radius: 5px;
@@ -39,5 +40,9 @@ function changeCheep():void{
   img {
     margin-right: 5px;
   }
+}
+
+.active{
+  border: 3px solid $myOrange;
 }
 </style>
