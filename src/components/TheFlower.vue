@@ -8,6 +8,7 @@
           class="rt-link"
           :to="'/shop/flower'+props.flower.id">
         <img
+            class="flower__img"
             :src="`src/img/flowers/${props.flower.img}`"
             :alt="props.flower.name">
       </router-link>
@@ -83,6 +84,7 @@ const isShowFlowerInShopBySearchedText = computed((): boolean => {
       object-fit: cover;
       width: 100%;
       height: 100%;
+      animation: rise 0.2s linear;
     }
   }
 
@@ -99,6 +101,15 @@ const isShowFlowerInShopBySearchedText = computed((): boolean => {
       color: rgba(131, 131, 131, 1);
     }
 
+  }
+}
+
+@keyframes rise {
+  0%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
   }
 }
 </style>
