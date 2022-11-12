@@ -49,17 +49,17 @@
 </template>
 
 <script setup lang="ts">
-import {computed} from 'vue';
+import {computed} from "vue";
 import {useRoute} from "vue-router";
-import {useUsersStore} from '@/stores/users';
+import {useUsersStore} from "@/stores/users";
 
 const usersStore = useUsersStore();
 
 const route = useRoute();
 
-let logButtonLink = computed(()=>{
+const logButtonLink = computed(()=>{
   return usersStore.getAuthorizedUser ? "/profile" : "/login";
-})
+});
 </script>
 
 <style scoped lang="scss">
