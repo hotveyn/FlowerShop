@@ -1,5 +1,5 @@
-import {defineStore} from "pinia";
-import {IFlower} from "@/interfaces/IFlower";
+import {IFlower} from '@/interfaces/IFlower';
+import {defineStore} from 'pinia';
 
 interface State {
     flowers: IFlower[];
@@ -128,6 +128,11 @@ export const useFlowersStore = defineStore("flowers", {
     getters:{
         getFlowerById:(state)=>{
             return (flowerId:number) => state.flowers.filter((a) => a.id === flowerId)[0];
+        },
+        getFavoriteFlowers():IFlower[]{
+            return this.flowers.filter((flower) => {
+                return flower.favorite
+            });
         }
     }
 
