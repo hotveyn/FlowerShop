@@ -36,12 +36,12 @@ function makeFavorite() {
   @include myFlex($jc: center);
   cursor: pointer;
   gap: 5px;
-  font-size: 15px;
   background-color: white;
   padding: 7px 10px;
   border:2px solid white;
   border-radius: 5px;
   transition: border 0.2s;
+  font-size: 18px;
 }
 .favorite{
   border-radius: 5px;

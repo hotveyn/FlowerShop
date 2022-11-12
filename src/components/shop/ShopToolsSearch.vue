@@ -20,7 +20,6 @@ const shopStore = useShopStore();
 // если связать search напрямую со shopStore то бага не будет
 // но связать с полем стора что либо из компонента нельзя(так Саня говорил)
 
-
 // const searchedText:Ref<string> = ref("");
 // watch(searchedText,(newSearchedText)=>{
 //   shopStore.search = newSearchedText;

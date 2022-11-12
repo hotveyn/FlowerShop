@@ -28,7 +28,7 @@
               </p>
             </div>
             <p class="flower__opinions">
-              ({{ flowerReviewLenght }} people opinion)
+              ({{ flowerReviewLength }} people opinion)
             </p>
           </div>
         </div>
@@ -63,8 +63,8 @@ const flower = computed((): IFlower => {
   return flowerStore.getFlowerById(Number(route.params.id));
 });
 
-const flowerReviewLenght = computed(():number=>{
-  return flower.value.reviews?.length ? flower.value.reviews.length:0;
+const flowerReviewLength = computed((): number => {
+  return flower.value.reviews?.length ? flower.value.reviews.length : 0;
 });
 </script>
 
@@ -108,46 +108,57 @@ const flowerReviewLenght = computed(():number=>{
       object-fit: cover;
       border-radius: 20px;
     }
-    .flower__info{
-      @include myFlex($fd:column,$ai:start);
+
+    .flower__info {
+      @include myFlex($fd: column, $ai: start);
       max-width: 680px;
       height: 326px;
 
 
-      .flower__name{
+      .flower__name {
         font-size: 26px;
         margin-bottom: 22px;
       }
-      .flower__description{
+
+      .flower__description {
         color: #838383;
         font-size: 22px;
         line-height: 35px;
         margin-bottom: 23px;
       }
-      .flower__rate{
+
+      .flower__rate {
         margin-bottom: 37px;
-        .stars{
-          @include myFlex($jc:start);
-          img{
+
+        .stars {
+          @include myFlex($jc: start);
+
+          img {
             margin-right: 5px;
             width: 22px;
           }
-          .flower__rate-number{
+
+          .flower__rate-number {
             font-size: 22px;
           }
+
           margin-bottom: 6px;
         }
-        .flower__opinions{
+
+        .flower__opinions {
           color: #838383;
         }
       }
-      .flower__buy-form{
+
+      .flower__buy-form {
         @include myFlex();
         width: 100%;
-        .flower__price{
+
+        .flower__price {
           font-size: 22px;
         }
-        .flower__buttons{
+
+        .flower__buttons {
           @include myFlex();
           gap: 5px;
 
