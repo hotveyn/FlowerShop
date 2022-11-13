@@ -32,14 +32,14 @@
         <RouterLink :to="logButtonLink">
           <div class="log-button">
             <img
-                src="@/icons/log.svg"
+                src="@/assets/icons/log.svg"
                 alt="log">
           </div>
         </RouterLink>
         <RouterLink to="/">
           <div class="cart-button">
             <img
-                src="@/icons/cart.svg"
+                src="@/assets/icons/cart.svg"
                 alt="log">
           </div>
         </RouterLink>

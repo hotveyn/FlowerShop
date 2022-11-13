@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import FavoriteFlowers from "@/components/user/FavoriteFlowers.vue"
+import FavoriteFlowers from "@/components/user/FavoriteFlowers.vue";
 import TheProfileInfo from "@/components/user/TheProfileInfo.vue";
 </script>
 

@@ -9,7 +9,7 @@
           :to="'/shop/flower'+props.flower.id">
         <img
             class="flower__img"
-            :src="`src/img/flowers/${props.flower.img}`"
+            :src="`src/assets/img/flowers/${props.flower.img}`"
             :alt="props.flower.name">
       </router-link>
     </div>
@@ -20,7 +20,7 @@
       <p class="buy__price">
         {{ props.flower.price }}$
       </p>
-      <AddToCart :flower-to-but="props.flower"/>
+      <AddToCart :flower="props.flower"/>
     </div>
   </div>
 </template>
@@ -40,7 +40,7 @@ const route = useRoute();
 
 const shopStore = useShopStore();
 
-const isShowFlowerInShopBySearchedText = computed((): boolean => {
+const isShowFlowerInShopBySearchedText = computed(() => {
   if (route.name === "shop") {
     const searchedText = shopStore.search.trim().toLowerCase();
     if (searchedText !== "") {

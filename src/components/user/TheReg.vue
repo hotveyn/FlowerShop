@@ -9,7 +9,7 @@
             to="/">
           <button class="reg__home">
             <img
-                src="@/icons/home.svg"
+                src="@/assets/icons/home.svg"
                 alt="home">
             Back to home
           </button>
@@ -59,7 +59,7 @@
     <div class="reg__img-wrapper">
       <img
           class="reg__img"
-          src="@/img/reg.png"
+          src="@/assets/img/reg.png"
           alt="reg">
     </div>
   </div>
@@ -86,6 +86,7 @@ function reg(): void {
   }
   [regMail.value, regName.value, regPassword.value] = "";
 }
+
 </script>
 
 <style scoped lang="scss">

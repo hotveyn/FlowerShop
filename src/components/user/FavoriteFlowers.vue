@@ -1,7 +1,6 @@
 <template>
-
-  <div
-      v-if="flowersStore.getFavoriteFlowers.length"
+<div
+      v-if="favoriteFlowers.length"
       class="fav-flowers">
     <div class="feed-item__title">
       <hr>
@@ -12,21 +11,20 @@
       <TheFlower
           v-for="flower in favoriteFlowers"
           :key="flower.id"
-          :flower="flower"></TheFlower>
+          :flower="flower"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import TheFlower from '@/components/TheFlower.vue';
-import {IFlower} from '@/interfaces/IFlower';
-import {useFlowersStore} from '@/stores/flowers';
-import {computed} from 'vue';
+import TheFlower from "@/components/TheFlower.vue";
+import {useFlowersStore} from "@/stores/flowers";
+import {computed} from "vue";
 
 const flowersStore = useFlowersStore();
 
-let favoriteFlowers = computed((): IFlower[] => {
-  return flowersStore.getFavoriteFlowers;
+const favoriteFlowers = computed(() => {
+  return flowersStore.getFavorites;
 });
 
 </script>

@@ -3,18 +3,18 @@
     <button
         :class="{'button-border':isRadioShow}"
         class="shop__filter shop__button"
-        @click="showFilters()">
+        @click="showSort()">
       <img
-          src="@/icons/filter.png"
+          src="@/assets/icons/filter.png"
           alt="filter">
-      Filtering
+      Sorting
     </button>
     <div
         v-show="isRadioShow"
         class="radio-button-group">
       <label>
         <input
-            v-model="filterMod"
+            v-model="sortMod"
             type="radio"
             name="category"
             value="Name"
@@ -25,7 +25,7 @@
       </label>
       <label>
         <input
-            v-model="filterMod"
+            v-model="sortMod"
             type="radio"
             name="category"
             value="Rate"
@@ -35,7 +35,7 @@
       </label>
       <label>
         <input
-            v-model="filterMod"
+            v-model="sortMod"
             type="radio"
             name="category"
             value="Popular"
@@ -45,7 +45,7 @@
       </label>
       <label>
         <input
-            v-model="filterMod"
+            v-model="sortMod"
             type="radio"
             name="category"
             value="Price"
@@ -61,22 +61,23 @@
 import {Ref, ref, watch} from "vue";
 import {useShopStore} from "@/stores/shop";
 
-type FilterType = "Name" | "Popular" | "Rate" | "Price";
+type SortType = "Name" | "Popular" | "Rate" | "Price";
 
 
 const isRadioShow: Ref<boolean> = ref(false);
 // Возможно тут нужен computed ну я хуй знает
-function showFilters() {
+function showSort() {
   isRadioShow.value = !isRadioShow.value;
 }
 
-const filterMod: Ref<FilterType> = ref("Name");
+const sortMod: Ref<SortType> = ref("Name");
 
 const shopStore = useShopStore();
 
-watch(filterMod, (newFilterMod: FilterType)=>{
-  shopStore.setFilterMod(newFilterMod);
+watch(sortMod, (newFilterMod: SortType)=>{
+  shopStore.setSortMod(newFilterMod);
 });
+
 </script>
 
 <style scoped lang="scss">

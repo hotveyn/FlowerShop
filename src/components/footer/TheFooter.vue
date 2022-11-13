@@ -36,14 +36,14 @@
           </router-link>
           <router-link
               class="rt-link"
-              to="/">
+              to="/login">
             <li class="links__info">
               Login
             </li>
           </router-link>
           <router-link
               class="rt-link"
-              to="/">
+              to="/registration">
             <li class="links__info">
               Reg
             </li>
@@ -131,17 +131,17 @@
         margin-bottom: 20px;
       }
       .contact__address::before{
-        content: url("@/icons/map.png");
+        content: url("@/assets/icons/map.png");
         position: absolute;
         left:-30px;
       }
       .contact__mail::before{
-        content: url("@/icons/mail.png");
+        content: url("@/assets/icons/mail.png");
         position: absolute;
         left:-30px;
       }
       .contact__phone::before{
-        content: url("@/icons/phone.png");
+        content: url("@/assets/icons/phone.png");
         position: absolute;
         left:-30px;
       }

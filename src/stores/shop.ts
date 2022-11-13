@@ -2,36 +2,36 @@ import {IFlower} from "@/interfaces/IFlower";
 import {defineStore} from "pinia";
 import {useFlowersStore} from "@/stores/flowers";
 
-type FilterType = "Name" | "Popular" | "Rate" | "Price";
+type SortType = "Name" | "Popular" | "Rate" | "Price";
 
 interface State {
-    filterMod: FilterType,
+    sortMod: SortType,
     search: string,
-    cheep: boolean
+    reverse: boolean
 }
 
 export const useShopStore = defineStore("shop", {
     state: (): State => ({
-        filterMod: "Name",
+        sortMod: "Name",
         search: "",
-        cheep: false,
+        reverse: false,
     }),
     actions: {
-        setFilterMod(newFilterMod: FilterType): void {
-            this.filterMod = newFilterMod;
+        setSortMod(newFilterMod: SortType): void {
+            this.sortMod = newFilterMod;
         },
         setSearch(newSearch: string): void {
             this.search = newSearch;
         },
-        setCheep(newCheep: boolean): void {
-            this.cheep = newCheep;
+        setReverse(newReverse: boolean): void {
+            this.reverse = newReverse;
         },
-        getFlowersByFilterMod(sortMod: FilterType): IFlower[] {
+        getFlowersBySortMod(sortMod: SortType): IFlower[] {
             const flowerStore = useFlowersStore();
 
             const tempFlowers: IFlower[] = [...flowerStore.flowers];
 
-            // Fix: Говнокод и наплевательское отношение к DRY
+            // Fix: Говнокод и наплевательское отношение к DRY, Сделать геттером
             switch (sortMod) {
                 case "Popular":
                     tempFlowers.sort((a, b) => (a.popular < b.popular) ? 1 : ((b.popular < a.popular) ? -1 : 0));
@@ -47,9 +47,7 @@ export const useShopStore = defineStore("shop", {
                     break;
             }
 
-            return this.cheep ? tempFlowers.reverse() : tempFlowers;
+            return this.reverse ? tempFlowers.reverse() : tempFlowers;
         },
-    }
-    // Fix: Спросить у Сани есть ли смысл делать геттеры просто для возвращение
-    // поля из стора или нет.
+    },
 });

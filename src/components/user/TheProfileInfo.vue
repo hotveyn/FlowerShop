@@ -58,8 +58,8 @@
       </div>
     </div>
     <button
-        @click="changeUserInfo()"
-        class="profile__save-button">
+        class="profile__save-button"
+        @click="changeUserInfo()">
       <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
@@ -73,7 +73,7 @@
 
 <script setup lang="ts">
 import {useUsersStore} from "@/stores/users";
-import {Ref, ref} from 'vue';
+import {Ref, ref} from "vue";
 
 const userStore = useUsersStore();
 

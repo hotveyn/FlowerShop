@@ -4,7 +4,7 @@
       @click="toCart()">
     <img
         :class="{'bought': disabled}"
-        src="@/icons/cart.svg"
+        src="@/assets/icons/cart.svg"
         alt="cart">
     Add to cart
   </button>
@@ -12,15 +12,15 @@
 
 <script setup lang="ts">
 import {IFlower} from "@/interfaces/IFlower";
-// import {useFlowersStore} from "@/stores/flowers";
 import {useCartStore} from "@/stores/cart";
 import {ref} from "vue";
+// import {useFlowersStore} from "@/stores/flowers";
 
 // const flowerStore = useFlowersStore();
 const cartStore = useCartStore();
 
 const props = defineProps<{
-  flowerToBut: IFlower;
+  flower: IFlower;
 }>();
 
 const disabled = ref(false);
@@ -35,7 +35,7 @@ function warnDisabled() {
 
 function toCart() {
   // flowerStore.upFlowerPopularRate(props.flowerToBut);
-  cartStore.addNewFlowerInCart(props.flowerToBut);
+  cartStore.addNewFlowerInCart(props.flower);
   warnDisabled();
 }
 </script>

@@ -2,22 +2,24 @@
   <button
       :class="{'active':shopStore.cheep}"
       class="cheep-button"
-      @click="changeCheep()">
+      @click="changeReverse()">
     <img
-        src="@/icons/cheep.png"
+        src="@/assets/icons/cheep.png"
         alt="cheep">
-    Cheep
+    Reverse
   </button>
 </template>
 
 <script setup lang="ts">
 import {useShopStore} from "@/stores/shop";
+import {Ref, ref} from 'vue';
 
 const shopStore = useShopStore();
 
-// Спросить у Сани нужно ли тут использовать watch вместо обычный функции
-function changeCheep():void{
-  shopStore.cheep = !shopStore.cheep;
+let isReverse: Ref<boolean> = ref(false)
+function changeReverse():void{
+  isReverse.value = !isReverse.value;
+  shopStore.setReverse(isReverse.value);
 }
 </script>
 

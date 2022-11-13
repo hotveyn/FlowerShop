@@ -10,7 +10,7 @@
               to="/">
             <button class="log__home">
               <img
-                  src="@/icons/home.svg"
+                  src="@/assets/icons/home.svg"
                   alt="home">
               Back to home
             </button>
@@ -49,7 +49,7 @@
     <div class="log__img-wrapper">
       <img
           class="log__img"
-          src="@/img/login.png"
+          src="@/assets/img/login.png"
           alt="log">
     </div>
   </div>

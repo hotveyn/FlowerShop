@@ -3,23 +3,23 @@
     <TheReview
         v-for="i in latestReviews"
         :key="i.id"
-:review="i"/>
+        :review="i"/>
   </div>
 </template>
 
 <script setup lang="ts">
-import TheReview from "@/components/home/TheReview.vue";
-import {useReviewStore} from "@/stores/review";
+import TheReview from '@/components/home/TheReview.vue';
+import {useReviewStore} from '@/stores/review';
 
-import {computed} from "vue";
+import {computed} from 'vue';
 
 const reviewStore = useReviewStore();
-const review = reviewStore.getReviews();
+const reviews = reviewStore.getReviews;
 
 const latestReviews = computed(() => {
-  const tempReviews = [...review].reverse();
-  tempReviews.length = 3;
-  return tempReviews;
+  return [reviews[reviews.length - 1],
+    reviews[reviews.length - 2],
+    reviews[reviews.length - 3]];
 });
 
 

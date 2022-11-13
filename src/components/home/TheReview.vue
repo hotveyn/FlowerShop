@@ -2,7 +2,7 @@
   <div class="review-wrapper">
     <div class="review">
       <img
-          :src="`src/img/avatars/${props.review.img}`"
+          :src="`src/assets/img/avatars/${props.review.img}`"
           :alt="props.review.name"
           class="review__avatar">
       <div class="review__info">
@@ -16,12 +16,12 @@
           <img
               v-for="i in props.review.stars"
               :key="i"
-              src="@/icons/star.png"
+              src="@/assets/icons/star.png"
               alt="start">
           <img
               v-for="i in 5 - props.review.stars"
               :key="i"
-              src="@/icons/starEmpty.png"
+              src="@/assets/icons/starEmpty.png"
               alt="start">
         </div>
       </div>
@@ -69,6 +69,7 @@ const props = defineProps<{
       font-weight: 400;
       line-height: 25px;
       margin-bottom: 15px;
+      overflow: hidden;
     }
 
     .stars {

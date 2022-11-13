@@ -1,7 +1,7 @@
 <template>
   <div class="flowers-items">
     <TheFlower
-        v-for="i in shopStore.getFlowersByFilterMod(shopStore.filterMod)"
+        v-for="i in sortedFlowers"
         :key="i.id"
         :flower="i"/>
   </div>
@@ -10,8 +10,13 @@
 <script setup lang="ts">
 import TheFlower from "@/components/TheFlower.vue";
 import {useShopStore} from "@/stores/shop";
+import {computed} from "vue";
 
 const shopStore = useShopStore();
+
+const sortedFlowers = computed(()=>{
+  return shopStore.getFlowersBySortMod(shopStore.sortMod);
+});
 </script>
 
 <style scoped lang="scss">

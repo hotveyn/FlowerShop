@@ -4,7 +4,7 @@
       :class="{'favorite': isFavorite}"
       @click="makeFavorite()">
     <img
-        src="@/icons/like.svg"
+        src="@/assets/icons/like.svg"
         alt="like">
     Add to favorite
   </button>
@@ -13,26 +13,26 @@
 <script setup lang="ts">
 import {IFlower} from "@/interfaces/IFlower";
 import {useFlowersStore} from "@/stores/flowers";
-import {useUsersStore} from '@/stores/users';
+import {useUsersStore} from "@/stores/users";
 import {ref} from "vue";
-import {useRouter} from 'vue-router';
+import {useRouter} from "vue-router";
 
 const usersStore = useUsersStore();
 const flowerStore = useFlowersStore();
 const router = useRouter();
 
 const props = defineProps<{
-  flowerToBut: IFlower;
+  flower: IFlower;
 }>();
 
-const isFavorite = ref(flowerStore.getFlowerById(props.flowerToBut.id).favorite);
+const isFavorite = ref(flowerStore.getById(props.flower.id).favorite);
 
-function makeFavorite() {
+function makeFavorite():void {
   if(usersStore.authorizedUser){
-    flowerStore.flowerToFavorite(props.flowerToBut);
+    flowerStore.makeFavorite(props.flower);
     isFavorite.value = !isFavorite.value;
   }else{
-    router.push("/login")
+    router.push("/login");
   }
 }
 </script>

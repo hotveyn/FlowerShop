@@ -1,5 +1,5 @@
-import {IFlower} from '@/interfaces/IFlower';
-import {defineStore} from 'pinia';
+import {IFlower} from "@/interfaces/IFlower";
+import {defineStore} from "pinia";
 
 interface State {
     flowers: IFlower[];
@@ -112,29 +112,28 @@ export const useFlowersStore = defineStore("flowers", {
         ],
     }),
     actions: {
-        upFlowerPopularRate(flowerToUpRate: IFlower): void {
+        upPopularRate(flowerToUpRate: IFlower): void {
             const flowerToUpRateTemp = this.flowers.filter((value) => {
                 return value === flowerToUpRate;
             });
             flowerToUpRateTemp[0].popular += 1;
         },
-        flowerToFavorite(flower: IFlower){
-            const flowerToFavoriteTemp = this.flowers.filter((value) => {
+        makeFavorite(flower: IFlower): void {
+            const favoritesTemp = this.flowers.filter((value) => {
                 return value === flower;
             });
-            flowerToFavoriteTemp[0].favorite = !flowerToFavoriteTemp[0].favorite;
-        }
-    },
-    getters:{
-        getFlowerById:(state)=>{
-            return (flowerId:number) => state.flowers.filter((a) => a.id === flowerId)[0];
+            favoritesTemp[0].favorite = !favoritesTemp[0].favorite;
         },
-        getFavoriteFlowers():IFlower[]{
+    },
+    getters: {
+        getById: (state) => {
+            return (flowerId: number): IFlower => state.flowers.filter((flower) => flower.id === flowerId)[0];
+        },
+        getFavorites(): IFlower[] {
             return this.flowers.filter((flower) => {
-                return flower.favorite
+                return flower.favorite;
             });
-        }
-    }
-
+        },
+    },
 });
 

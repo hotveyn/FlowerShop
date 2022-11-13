@@ -8,7 +8,7 @@
     <div class="flower">
       <img
           class="flower__img"
-          :src="'/src/img/flowers/'+flower.img"
+          :src="'/src/assets/img/flowers/'+flower.img"
           alt="flower">
       <div class="flower__info">
         <div class="desc">
@@ -21,7 +21,7 @@
           <div class="flower__rate">
             <div class="stars">
               <img
-                  src="@/icons/star.png"
+                  src="@/assets/icons/star.png"
                   alt="start">
               <p class="flower__rate-number">
                 {{ flower.rate }}/5
@@ -37,8 +37,8 @@
             {{ flower.price }}$ / EACH
           </p>
           <div class="flower__buttons">
-            <AddToFavorite :flower-to-but="flower"/>
-            <AddToCart :flower-to-but="flower"/>
+            <AddToFavorite :flower="flower"/>
+            <AddToCart :flower="flower"/>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@ const flowerStore = useFlowersStore();
 const route = useRoute();
 
 const flower = computed((): IFlower => {
-  return flowerStore.getFlowerById(Number(route.params.id));
+  return flowerStore.getById(Number(route.params.id));
 });
 
 const flowerReviewLength = computed((): number => {

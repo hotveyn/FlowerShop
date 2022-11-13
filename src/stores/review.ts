@@ -12,7 +12,7 @@ export const useReviewStore = defineStore("review", {
             {
                 id: 1,
                 name: "Aneta",
-                description: "i’m buying flower from them every weak, always fresh flowers and beutiful😍🌻... love’em so nuch..keep going 💯💯",
+                description: "i’m buying flower from them every weak, always fresh flowers and beutiful😍🌻... love’em so nuch..keep going 💯💯 go bruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuh",
                 stars: 4,
                 img: "atena.png",
             },
@@ -39,7 +39,7 @@ export const useReviewStore = defineStore("review", {
             },
         ],
     }),
-    actions: {
+    getters: {
         getReviews():IReview[] {
             return this.reviews;
         },

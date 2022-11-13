@@ -1,7 +1,7 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 import ShopPage from "@/pages/ShopPage.vue";
-import FlowerFull from "@/components/FlowerFull.vue";
+import FlowerInDetail from "@/components/FlowerInDetail.vue";
 import TheReg from "@/components/user/TheReg.vue";
 import TheLogin from "@/components/user/TheLogin.vue";
 import TheProfile from "@/components/user/TheProfile.vue";
@@ -20,7 +20,7 @@ const routes: RouteRecordRaw[] = [
     {
         path:"/shop/flower:id",
         name:"flower:id",
-        component: FlowerFull
+        component: FlowerInDetail
     },
     {
         path:"/registration",

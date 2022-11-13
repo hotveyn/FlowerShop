@@ -1,15 +1,15 @@
 <template>
   <div class="shop__tools">
-    <ShopToolsFiltering/>
+    <ShopToolsSorting/>
     <ShopToolsSearch/>
-    <ShopToolsCheep/>
+    <ShopToolsRevers/>
   </div>
 </template>
 
 <script setup lang="ts">
-import ShopToolsFiltering from "@/components/shop/ShopToolsFiltering.vue";
+import ShopToolsSorting from "@/components/shop/ShopToolsSorting.vue";
 import ShopToolsSearch from "@/components/shop/ShopToolsSearch.vue";
-import ShopToolsCheep from  "@/components/shop/ShopToolsCheep.vue";
+import ShopToolsRevers from "@/components/shop/ShopToolsRevers.vue";
 
 </script>
 
