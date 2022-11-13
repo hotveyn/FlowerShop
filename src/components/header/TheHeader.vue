@@ -36,7 +36,7 @@
                 alt="log">
           </div>
         </RouterLink>
-        <RouterLink to="/">
+        <RouterLink to="/cart">
           <div class="cart-button">
             <img
                 src="@/assets/icons/cart.svg"
