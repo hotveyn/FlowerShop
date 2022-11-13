@@ -77,20 +77,20 @@ import {Ref, ref} from "vue";
 
 const userStore = useUsersStore();
 
-const user = userStore.authorizedUser;
+const user = userStore.authorizedUser!;
 
-const userName: Ref<string> = ref(user!.username);
-const userPassword: Ref<string> = ref(user!.password);
-const userPhone: Ref<number> = ref(user!.phone!);
-const userEMail: Ref<string> = ref(user!.email);
-const userAbout: Ref<string> = ref(user!.aboutMe!);
+let userName: Ref<string> = ref(user.username);
+let userPassword: Ref<string> = ref(user.password);
+let userPhone: Ref<number | undefined> = ref(user.phone);
+let userEMail: Ref<string> = ref(user.email);
+let userAbout: Ref<string | undefined> = ref(user.aboutMe);
 
 function changeUserInfo(): void {
-  user!.username = userName.value;
-  user!.password = userPassword.value;
-  user!.phone = userPhone.value;
-  user!.email = userEMail.value;
-  user!.aboutMe = userAbout.value;
+  userStore.setAuthorizedUserName(userName.value);
+  userStore.setAuthorizedUserPassword(userPassword.value);
+  userStore.setAuthorizedUserPhone(userPhone.value!);
+  userStore.setAuthorizedUserEmail(userEMail.value);
+  userStore.setAuthorizedUserAboutMe(userAbout.value!);
 }
 </script>
 

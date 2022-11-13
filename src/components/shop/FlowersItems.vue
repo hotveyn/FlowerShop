@@ -14,11 +14,14 @@ import {computed} from "vue";
 
 const shopStore = useShopStore();
 
-const sortedFlowers = shopStore.getFlowersBySortMod(shopStore.sortMod);
+const sortedFlowers = computed(() => {
+  return shopStore.getFlowersBySort(shopStore.sortMod);
+});
 </script>
 
 <style scoped lang="scss">
 .flowers-items {
+  min-height: 500px;
   margin-top: 40px;
   gap: 35px;
   display: grid;

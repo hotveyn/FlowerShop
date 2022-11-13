@@ -65,9 +65,11 @@ const isShowFlowerInShopBySearchedText = computed(() => {
 
 .flower {
   background-color: white;
+  box-sizing: border-box;
   padding: 17px;
   border-radius: 5px;
   transition: box-shadow 0.5s;
+  max-height: 358px;
 
   &:hover {
     box-shadow: 0 0 15px #bdbdbd;

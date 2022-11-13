@@ -58,7 +58,7 @@ const usersStore = useUsersStore();
 const route = useRoute();
 
 const logButtonLink = computed(() => {
-  return usersStore.getAuthorizedUser ? "/profile" : "/login";
+  return usersStore.authorizedUser ? "/profile" : "/login";
 });
 </script>
 

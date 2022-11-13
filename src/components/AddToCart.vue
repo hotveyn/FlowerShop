@@ -35,7 +35,7 @@ function warnDisabled() {
 
 function toCart() {
   // flowerStore.upFlowerPopularRate(props.flowerToBut);
-  cartStore.addNewFlowerInCart(props.flower);
+  cartStore.addNewFlower(props.flower);
   warnDisabled();
 }
 </script>

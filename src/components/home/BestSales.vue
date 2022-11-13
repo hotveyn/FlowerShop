@@ -16,7 +16,7 @@ const shopStore = useShopStore();
 
 
 const sortedFlowersByPopular = computed(()=>{
-  const sortedFlowers = [...shopStore.getFlowersBySortMod("Popular")];
+  const sortedFlowers = [...shopStore.getFlowersBySort("Popular")];
   sortedFlowers.length = 4;
   return sortedFlowers;
 });
