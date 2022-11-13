@@ -50,13 +50,30 @@ export const useUsersStore = defineStore("users", {
             this.authorizedUser = newUser;
             this.users.push(newUser);
         },
-    },
-    getters: {
-        getAuthorizedUser(): IUser | undefined {
+        setAuthorizedUserName(newUserName: string): void {
             if (this.authorizedUser) {
-                return this.authorizedUser;
+                this.authorizedUser.username = newUserName;
             }
-            return undefined;
+        },
+        setAuthorizedUserPassword(newPassword: string): void {
+            if (this.authorizedUser) {
+                this.authorizedUser.password = newPassword;
+            }
+        },
+        setAuthorizedUserPhone(newPhone: number): void {
+            if (this.authorizedUser && newPhone) {
+                this.authorizedUser.phone = newPhone;
+            }
+        },
+        setAuthorizedUserEmail(newEmail: string): void {
+            if (this.authorizedUser) {
+                this.authorizedUser.email = newEmail;
+            }
+        },
+        setAuthorizedUserAboutMe(newAboutMe: string): void {
+            if (this.authorizedUser && newAboutMe) {
+                this.authorizedUser.aboutMe = newAboutMe;
+            }
         },
     },
 });
