@@ -27,11 +27,11 @@ const props = defineProps<{
 
 const isFavorite = ref(flowerStore.getById(props.flower.id).favorite);
 
-function makeFavorite():void {
-  if(usersStore.authorizedUser){
+function makeFavorite(): void {
+  if (usersStore.authorizedUser) {
     flowerStore.makeFavorite(props.flower);
     isFavorite.value = !isFavorite.value;
-  }else{
+  } else {
     router.push("/login");
   }
 }
@@ -46,13 +46,14 @@ function makeFavorite():void {
   gap: 5px;
   background-color: white;
   padding: 7px 10px;
-  border:2px solid white;
+  border: 2px solid white;
   border-radius: 5px;
   transition: border 0.2s;
   font-size: 18px;
 }
-.favorite{
+
+.favorite {
   border-radius: 5px;
-  border:2px solid $myOrange;
+  border: 2px solid $myOrange;
 }
 </style>
