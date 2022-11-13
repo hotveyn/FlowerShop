@@ -1,6 +1,6 @@
 <template>
   <button
-      :class="{'active':shopStore.cheep}"
+      :class="{'active':shopStore.reverse}"
       class="cheep-button"
       @click="changeReverse()">
     <img
@@ -12,11 +12,11 @@
 
 <script setup lang="ts">
 import {useShopStore} from "@/stores/shop";
-import {Ref, ref} from 'vue';
+import {Ref, ref} from "vue";
 
 const shopStore = useShopStore();
 
-let isReverse: Ref<boolean> = ref(false)
+const isReverse: Ref<boolean> = ref(false);
 function changeReverse():void{
   isReverse.value = !isReverse.value;
   shopStore.setReverse(isReverse.value);

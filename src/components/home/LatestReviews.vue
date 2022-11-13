@@ -8,10 +8,10 @@
 </template>
 
 <script setup lang="ts">
-import TheReview from '@/components/home/TheReview.vue';
-import {useReviewStore} from '@/stores/review';
+import TheReview from "@/components/home/TheReview.vue";
+import {useReviewStore} from "@/stores/review";
 
-import {computed} from 'vue';
+import {computed} from "vue";
 
 const reviewStore = useReviewStore();
 const reviews = reviewStore.getReviews;
