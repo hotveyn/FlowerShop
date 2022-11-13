@@ -18,12 +18,12 @@ import TheProfileInfo from "@/components/user/TheProfileInfo.vue";
 <style scoped lang="scss">
 @import "@/mixins.scss";
 
-.profile-container{
+.profile-container {
   max-width: 1050px;
   margin: 0 auto;
 }
 
-.home-button{
+.home-button {
   padding: 7px 17px;
   border-radius: 5px;
   border: 2px solid $myOrange;
@@ -33,7 +33,8 @@ import TheProfileInfo from "@/components/user/TheProfileInfo.vue";
   transition: color 0.2s, background-color 0.2s;
   font-size: 18px;
   margin-bottom: 30px;
-  &:hover{
+
+  &:hover {
     color: white;
     background-color: $myOrange;
   }

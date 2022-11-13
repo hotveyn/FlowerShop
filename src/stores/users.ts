@@ -50,6 +50,7 @@ export const useUsersStore = defineStore("users", {
             this.authorizedUser = newUser;
             this.users.push(newUser);
         },
+        // Fix: возможно стоит сделать одним методом
         setAuthorizedUserName(newUserName: string): void {
             if (this.authorizedUser) {
                 this.authorizedUser.username = newUserName;

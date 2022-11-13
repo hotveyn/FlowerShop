@@ -15,7 +15,7 @@ import {computed} from "vue";
 const shopStore = useShopStore();
 
 
-const sortedFlowersByPopular = computed(()=>{
+const sortedFlowersByPopular = computed(() => {
   const sortedFlowers = [...shopStore.getFlowersBySort("Popular")];
   sortedFlowers.length = 4;
   return sortedFlowers;

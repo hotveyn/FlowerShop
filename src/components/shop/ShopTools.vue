@@ -15,6 +15,7 @@ import ShopToolsRevers from "@/components/shop/ShopToolsRevers.vue";
 
 <style scoped lang="scss">
 @import "@/mixins.scss";
+
 .shop__tools {
   @include myFlex();
   width: 100%;

@@ -1,5 +1,5 @@
 <template>
-<!--  Возможно нужно порезать на компоненты-->
+  <!--  Возможно нужно порезать на компоненты-->
   <div class="log">
     <div class="reg__form">
       <div class="reg__title">

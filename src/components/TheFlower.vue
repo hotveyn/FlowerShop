@@ -107,10 +107,10 @@ const isShowFlowerInShopBySearchedText = computed(() => {
 }
 
 @keyframes rise {
-  0%{
+  0% {
     opacity: 0.5;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }

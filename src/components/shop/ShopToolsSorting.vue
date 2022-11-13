@@ -66,7 +66,7 @@ type SortType = "Name" | "Popular" | "Rate" | "Price";
 
 const isRadioShow: Ref<boolean> = ref(false);
 
-// Возможно тут нужен computed ну я хуй знает
+
 function showSort() {
   isRadioShow.value = !isRadioShow.value;
 }

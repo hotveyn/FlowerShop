@@ -25,11 +25,11 @@ export const useShopStore = defineStore("shop", {
         },
         setReverse(newReverse: boolean): void {
             this.reverse = newReverse;
-        }
+        },
     },
     getters: {
-        getFlowersBySort: (state) =>{
-            return (sortMod: SortType) : IFlower[] =>{
+        getFlowersBySort: (state) => {
+            return (sortMod: SortType): IFlower[] => {
                 const flowerStore = useFlowersStore();
 
                 const tempFlowers: IFlower[] = [...flowerStore.flowers];
@@ -52,6 +52,6 @@ export const useShopStore = defineStore("shop", {
 
                 return state.reverse ? tempFlowers.reverse() : tempFlowers;
             };
-        }
-    }
+        },
+    },
 });
