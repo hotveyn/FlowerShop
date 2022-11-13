@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
 import {IFlower} from "@/interfaces/IFlower";
+import {useFlowersStore} from "@/stores/flowers";
 
 interface State {
     flowersInCart: [IFlower, number][];
@@ -21,7 +22,7 @@ export const useCartStore = defineStore("cart", {
             }
         },
         removeFlower(flowerToRemove: IFlower): void {
-            this.flowersInCart.filter((flower) => {
+            this.flowersInCart = this.flowersInCart.filter((flower) => {
                 return flower[0].id !== flowerToRemove.id;
             });
         },
@@ -29,19 +30,40 @@ export const useCartStore = defineStore("cart", {
             const flowerInCart = this.flowersInCart.find((flower) =>
                 flower[0].id === flowerToChange.id,
             );
-            if(flowerInCart){
-                flowerInCart[1] > 0 ? flowerInCart[1] += mod : this.removeFlower(flowerInCart[0]);
+            if (flowerInCart) {
+                flowerInCart[1] !== 1 || mod !== -1 ?
+                    flowerInCart[1] += mod : this.removeFlower(flowerInCart[0]);
             }
         },
-
+        buy(): void {
+            const flowerStore = useFlowersStore();
+            this.flowersInCart.map((flower) => {
+                const flowerInBrowse = flowerStore.getById(flower[0].id);
+                flowerStore.upPopular(flowerInBrowse, flower[1]);
+            });
+            this.flowersInCart = [];
+        },
     },
     getters: {
-
-        getCartItems(): [IFlower, number][] {
+        getItems(): [IFlower, number][] {
             return this.flowersInCart;
         },
-        getCartLength(): number {
+        getLength(): number {
             return this.flowersInCart.length;
+        },
+        getTotalPrice(): number {
+            let price = 0;
+            this.flowersInCart.forEach((i) => {
+                price += i[0].price * i[1];
+            });
+            return price;
+        },
+        getUniqFlowerTotalPrice: (state) => {
+            return (flowerToGetPrice: IFlower): number | undefined => {
+                const flower = state.flowersInCart.find((flower) =>
+                    flower[0].id === flowerToGetPrice.id);
+                if (flower) return flower[0].price * flower[1];
+            };
         },
     },
 });
