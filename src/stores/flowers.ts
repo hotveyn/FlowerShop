@@ -112,17 +112,17 @@ export const useFlowersStore = defineStore("flowers", {
         ],
     }),
     actions: {
-        upPopularRate(flowerToUpRate: IFlower): void {
-            const flowerToUpRateTemp = this.flowers.filter((value) => {
-                return value === flowerToUpRate;
+        upPopular(flowerToUpRate: IFlower, points: number): void {
+            const flowerToUpRateTemp = this.flowers.find((flower) => {
+                return flower.id === flowerToUpRate.id;
             });
-            flowerToUpRateTemp[0].popular += 1;
+            if (flowerToUpRateTemp) flowerToUpRateTemp.popular += points;
         },
-        makeFavorite(flower: IFlower): void {
-            const favoritesTemp = this.flowers.filter((value) => {
-                return value === flower;
+        makeFavorite(flowerToFavorite: IFlower): void {
+            const favoriteFlowerTemp = this.flowers.find((flower) => {
+                return flower.id === flowerToFavorite.id;
             });
-            favoritesTemp[0].favorite = !favoritesTemp[0].favorite;
+            if (favoriteFlowerTemp) favoriteFlowerTemp.favorite = !favoriteFlowerTemp.favorite;
         },
     },
     getters: {
