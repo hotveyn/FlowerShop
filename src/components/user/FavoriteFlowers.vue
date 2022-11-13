@@ -1,5 +1,5 @@
 <template>
-<div
+  <div
       v-if="favoriteFlowers.length"
       class="fav-flowers">
     <div class="feed-item__title">
@@ -35,7 +35,8 @@ const favoriteFlowers = computed(() => {
 
 .fav-flowers {
   margin: 50px auto 0;
-  .fav-flowers__grid{
+
+  .fav-flowers__grid {
     margin: 50px auto 0;
     width: 80%;
     gap: 15px;
@@ -44,13 +45,15 @@ const favoriteFlowers = computed(() => {
     grid-template-rows: repeat(1, 1fr);
   }
 }
+
 .feed-item__title {
-  @include myFlex($jc:center);
+  @include myFlex($jc: center);
   margin-bottom: 33px;
 
   h3 {
     font-size: 32px;
   }
+
   hr {
     width: 280px;
     background-color: #D9D9D9;

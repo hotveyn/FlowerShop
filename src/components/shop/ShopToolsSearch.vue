@@ -28,6 +28,7 @@ const shopStore = useShopStore();
 
 <style scoped lang="scss">
 @import "@/mixins.scss";
+
 .shop__search {
   width: 500px;
   border: 3px solid $myGrey;
@@ -38,13 +39,15 @@ const shopStore = useShopStore();
   outline: none;
   transition: border-color 0.2s;
 
-  &:hover, &:focus{
-    border-color:$myOrange ;
+  &:hover, &:focus {
+    border-color: $myOrange;
   }
 
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration { display: none; }
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
 }
 </style>

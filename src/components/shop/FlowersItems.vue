@@ -14,9 +14,7 @@ import {computed} from "vue";
 
 const shopStore = useShopStore();
 
-const sortedFlowers = computed(()=>{
-  return shopStore.getFlowersBySortMod(shopStore.sortMod);
-});
+const sortedFlowers = shopStore.getFlowersBySortMod(shopStore.sortMod);
 </script>
 
 <style scoped lang="scss">

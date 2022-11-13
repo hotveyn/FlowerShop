@@ -65,6 +65,7 @@ type SortType = "Name" | "Popular" | "Rate" | "Price";
 
 
 const isRadioShow: Ref<boolean> = ref(false);
+
 // Возможно тут нужен computed ну я хуй знает
 function showSort() {
   isRadioShow.value = !isRadioShow.value;
@@ -74,7 +75,7 @@ const sortMod: Ref<SortType> = ref("Name");
 
 const shopStore = useShopStore();
 
-watch(sortMod, (newFilterMod: SortType)=>{
+watch(sortMod, (newFilterMod: SortType) => {
   shopStore.setSortMod(newFilterMod);
 });
 
@@ -105,9 +106,11 @@ watch(sortMod, (newFilterMod: SortType)=>{
       margin-right: 5px;
     }
   }
-  .button-border{
+
+  .button-border {
     border: 3px solid $myOrange;
   }
+
   .radio-button-group {
     @include myFlex($ai: start, $fd: column);
 

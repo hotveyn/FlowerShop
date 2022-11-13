@@ -57,7 +57,7 @@ const usersStore = useUsersStore();
 
 const route = useRoute();
 
-const logButtonLink = computed(()=>{
+const logButtonLink = computed(() => {
   return usersStore.getAuthorizedUser ? "/profile" : "/login";
 });
 </script>
@@ -78,8 +78,10 @@ const logButtonLink = computed(()=>{
     text-decoration: none;
     color: black;
   }
-  li{
+
+  li {
     transition: color 0.2s;
+
     &:hover {
       color: $myOrange;
     }

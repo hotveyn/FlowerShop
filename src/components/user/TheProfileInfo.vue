@@ -81,16 +81,16 @@ const user = userStore.authorizedUser;
 
 const userName: Ref<string> = ref(user!.username);
 const userPassword: Ref<string> = ref(user!.password);
-const userPhone:  Ref<number> = ref(user!.phone!);
+const userPhone: Ref<number> = ref(user!.phone!);
 const userEMail: Ref<string> = ref(user!.email);
 const userAbout: Ref<string> = ref(user!.aboutMe!);
 
-function changeUserInfo():void{
-    user!.username = userName.value;
-    user!.password = userPassword.value;
-    user!.phone = userPhone.value;
-    user!.email = userEMail.value;
-    user!.aboutMe = userAbout.value;
+function changeUserInfo(): void {
+  user!.username = userName.value;
+  user!.password = userPassword.value;
+  user!.phone = userPhone.value;
+  user!.email = userEMail.value;
+  user!.aboutMe = userAbout.value;
 }
 </script>
 

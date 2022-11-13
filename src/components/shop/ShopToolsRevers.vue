@@ -17,7 +17,8 @@ import {Ref, ref} from "vue";
 const shopStore = useShopStore();
 
 const isReverse: Ref<boolean> = ref(false);
-function changeReverse():void{
+
+function changeReverse(): void {
   isReverse.value = !isReverse.value;
   shopStore.setReverse(isReverse.value);
 }
@@ -35,16 +36,18 @@ function changeReverse():void{
   @include myFlex();
   font-size: 19px;
   transition: border 0.2s;
-  &:hover{
+
+  &:hover {
 
     border: 3px solid $myOrange;
   }
+
   img {
     margin-right: 5px;
   }
 }
 
-.active{
+.active {
   border: 3px solid $myOrange;
 }
 </style>

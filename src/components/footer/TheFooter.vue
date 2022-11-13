@@ -106,10 +106,11 @@
 
 
     .footer-links {
-      @include myFlex($ai:start);
+      @include myFlex($ai: start);
       max-width: 524px;
       width: 100%;
       margin-top: 10px;
+
       h3 {
         color: white;
         font-size: 22px;
@@ -127,23 +128,27 @@
         color: $myGrey;
         position: relative;
       }
-      .contact__info{
+
+      .contact__info {
         margin-bottom: 20px;
       }
-      .contact__address::before{
+
+      .contact__address::before {
         content: url("@/assets/icons/map.png");
         position: absolute;
-        left:-30px;
+        left: -30px;
       }
-      .contact__mail::before{
+
+      .contact__mail::before {
         content: url("@/assets/icons/mail.png");
         position: absolute;
-        left:-30px;
+        left: -30px;
       }
-      .contact__phone::before{
+
+      .contact__phone::before {
         content: url("@/assets/icons/phone.png");
         position: absolute;
-        left:-30px;
+        left: -30px;
       }
     }
   }

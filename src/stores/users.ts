@@ -12,7 +12,7 @@ export const useUsersStore = defineStore("users", {
     state: (): State => ({
         users: [
             {
-                id:1,
+                id: 1,
                 username: "admin",
                 email: "admin@gmail.com",
                 phone: 88005553535,
@@ -49,7 +49,7 @@ export const useUsersStore = defineStore("users", {
             };
             this.authorizedUser = newUser;
             this.users.push(newUser);
-        }
+        },
     },
     getters: {
         getAuthorizedUser(): IUser | undefined {
