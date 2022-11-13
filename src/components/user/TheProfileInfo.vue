@@ -79,11 +79,11 @@ const userStore = useUsersStore();
 
 const user = userStore.authorizedUser!;
 
-let userName: Ref<string> = ref(user.username);
-let userPassword: Ref<string> = ref(user.password);
-let userPhone: Ref<number | undefined> = ref(user.phone);
-let userEMail: Ref<string> = ref(user.email);
-let userAbout: Ref<string | undefined> = ref(user.aboutMe);
+const userName: Ref<string> = ref(user.username);
+const userPassword: Ref<string> = ref(user.password);
+const userPhone: Ref<number | undefined> = ref(user.phone);
+const userEMail: Ref<string> = ref(user.email);
+const userAbout: Ref<string | undefined> = ref(user.aboutMe);
 
 function changeUserInfo(): void {
   userStore.setAuthorizedUserName(userName.value);
