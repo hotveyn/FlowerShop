@@ -1,5 +1,5 @@
-import {defineStore} from 'pinia';
-import {IUser} from '@/interfaces/IUser';
+import {defineStore} from "pinia";
+import {IUser} from "@/interfaces/IUser";
 
 interface State {
     users: IUser[];
@@ -8,16 +8,16 @@ interface State {
 }
 
 
-export const useUsersStore = defineStore('users', {
+export const useUsersStore = defineStore("users", {
     state: (): State => ({
         users: [
             {
                 id: 1,
-                username: 'admin',
-                email: 'admin@gmail.com',
+                username: "admin",
+                email: "admin@gmail.com",
                 phone: 88005553535,
-                password: 'admin',
-                aboutMe: 'I am a God. How can you kill a God?',
+                password: "admin",
+                aboutMe: "I am a God. How can you kill a God?",
             },
         ],
         authorizedUser: undefined,
@@ -34,7 +34,7 @@ export const useUsersStore = defineStore('users', {
                     this.authorizedUser = loginUser[0];
                 }
             } else {
-                return 'Ошибка';
+                return "Ошибка";
             }
         },
         exit(): void {
