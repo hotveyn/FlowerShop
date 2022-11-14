@@ -200,6 +200,7 @@ function changeUserInfo(): void {
     cursor: pointer;
     font-size: 20px;
     transition: color 0.2s, fill 0.2s, background-color 0.2s;
+    color: $myOrange;
 
     svg {
       width: 30px;

@@ -1,6 +1,6 @@
 <template>
   <div class="best-flowers">
-    <TheFlower
+    <FlowerItem
         v-for="i in sortedFlowersByPopular"
         :key="i.id"
         :flower="i"/>
@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import TheFlower from "@/components/TheFlower.vue";
+import FlowerItem from "@/components/FlowerItem.vue";
 import {useShopStore} from "@/stores/shop";
 import {computed} from "vue";
 

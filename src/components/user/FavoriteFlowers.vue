@@ -8,7 +8,7 @@
       <hr>
     </div>
     <div class="fav-flowers__grid">
-      <TheFlower
+      <FlowerItem
           v-for="flower in favoriteFlowers"
           :key="flower.id"
           :flower="flower"/>
@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import TheFlower from "@/components/TheFlower.vue";
+import FlowerItem from "@/components/FlowerItem.vue";
 import {useFlowersStore} from "@/stores/flowers";
 import {computed} from "vue";
 
