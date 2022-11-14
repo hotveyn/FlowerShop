@@ -13,41 +13,18 @@
         <!-- Fix: links -->
         <ul class="links">
           <li><h3>Links</h3></li>
-          <router-link
-              class="rt-link"
-              to="/">
-            <li class="links__info">
-              Home
-            </li>
-          </router-link>
-          <router-link
-              class="rt-link"
-              to="/shop">
-            <li class="links__info">
-              Shop
-            </li>
-          </router-link>
-          <router-link
-              class="rt-link"
-              to="/">
-            <li class="links__info">
-              About
-            </li>
-          </router-link>
-          <router-link
-              class="rt-link"
-              to="/login">
-            <li class="links__info">
-              Login
-            </li>
-          </router-link>
-          <router-link
-              class="rt-link"
-              to="/registration">
-            <li class="links__info">
-              Reg
-            </li>
-          </router-link>
+          <li
+              v-for="(value, link) in links"
+              :key="link"
+              class="links__info"
+          >
+            <RouterLink
+                class="rt-link"
+                :to="{name:link}"
+            >
+              {{ value }}
+            </RouterLink>
+          </li>
         </ul>
         <ul class="contact">
           <li><h3>Contact</h3></li>
@@ -67,10 +44,14 @@
 </template>
 
 <script setup lang="ts">
+
+import {reactive} from "vue";
+
+const links = reactive({home: "Home", shop: "Shop", login: "Login", registration: "Reg"});
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .footer {
   background-color: rgba(69, 69, 69, 1);
@@ -119,6 +100,7 @@
 
       .rt-link {
         text-decoration: none;
+        color: rgb(217, 217, 217);
       }
 
       .contact__info, .links__info {
