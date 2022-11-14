@@ -21,12 +21,12 @@
       <input
           v-model.trim="regMail"
           type="email"
-          placeholder="e-mail"
+          :placeholder="regMailPlaceholder"
           class="reg__email-input">
       <input
           v-model.trim="regName"
           type="text"
-          placeholder="Username"
+          :placeholder="regNamePlaceholder"
           class="reg__username-input">
       <input
           v-model.trim="regPassword"
@@ -74,7 +74,9 @@ const usersStore = useUsersStore();
 const router = useRouter();
 
 const regMail: Ref<string> = ref("");
+const regMailPlaceholder: Ref<string> = ref("Email");
 const regName: Ref<string> = ref("");
+const regNamePlaceholder: Ref<string> = ref("Username");
 const regPassword: Ref<string> = ref("");
 
 function reg(): void {
@@ -85,8 +87,9 @@ function reg(): void {
     [regMail.value, regName.value, regPassword.value] = "";
     router.push("/");
   } else {
-    [regMail.value, regName.value, regPassword.value] =
-        ["Такой пользователь уже есть", "либо вы не заполнили все поля", ""];
+    [regMail.value, regName.value, regPassword.value] = "";
+    regMailPlaceholder.value = "User with the same email already exist";
+    regNamePlaceholder.value = "or you didn't set all the fields";
   }
 }
 
