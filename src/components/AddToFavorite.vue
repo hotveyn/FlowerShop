@@ -1,11 +1,13 @@
 <template>
   <button
       class="button-favorite"
-      :class="{'favorite': isFavorite}"
-      @click="makeFavorite()">
+      :class="{'favorite': flower.favorite}"
+      @click="makeFavorite()"
+  >
     <img
         src="@/assets/icons/like.svg"
-        alt="like">
+        alt="like"
+    >
     Add to favorite
   </button>
 </template>
@@ -14,7 +16,6 @@
 import {IFlower} from "@/interfaces/IFlower";
 import {useFlowersStore} from "@/stores/flowers";
 import {useUsersStore} from "@/stores/users";
-import {ref} from "vue";
 import {useRouter} from "vue-router";
 
 const usersStore = useUsersStore();
@@ -25,12 +26,9 @@ const props = defineProps<{
   flower: IFlower;
 }>();
 
-const isFavorite = ref(flowerStore.getById(props.flower.id).favorite);
-
 function makeFavorite(): void {
   if (usersStore.authorizedUser) {
     flowerStore.makeFavorite(props.flower);
-    isFavorite.value = !isFavorite.value;
   } else {
     router.push("/login");
   }
@@ -38,7 +36,7 @@ function makeFavorite(): void {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .button-favorite {
   @include myFlex($jc: center);
