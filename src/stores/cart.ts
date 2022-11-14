@@ -1,9 +1,11 @@
+import {IFlowerCart} from "@/interfaces/IFlowerCart";
 import {defineStore} from "pinia";
 import {IFlower} from "@/interfaces/IFlower";
 import {useFlowersStore} from "@/stores/flowers";
 
+
 interface State {
-    flowersInCart: [IFlower, number][];
+    flowersInCart: IFlowerCart[];
 }
 
 export const useCartStore = defineStore("cart", {
@@ -13,39 +15,45 @@ export const useCartStore = defineStore("cart", {
     actions: {
         addNewFlower(newFlower: IFlower): void {
             const flowerInCart = this.flowersInCart.find((flower) =>
-                flower[0].id === newFlower.id,
+                flower.id === newFlower.id,
             );
             if (flowerInCart) {
-                flowerInCart[1] += 1;
+                flowerInCart.count += 1;
             } else {
-                this.flowersInCart.push([newFlower, 1]);
+                this.flowersInCart.push({...newFlower, count: 1});
             }
         },
         removeFlower(flowerToRemove: IFlower): void {
             this.flowersInCart = this.flowersInCart.filter((flower) => {
-                return flower[0].id !== flowerToRemove.id;
+                return flower.id !== flowerToRemove.id;
             });
         },
-        changeFlowerCount(flowerToChange: IFlower, mod: 1 | -1): void {
+        changeFlowerCount(flowerToChange: IFlower, mod: "increment" | "decrement"): void {
             const flowerInCart = this.flowersInCart.find((flower) =>
-                flower[0].id === flowerToChange.id,
+                flower.id === flowerToChange.id,
             );
             if (flowerInCart) {
-                flowerInCart[1] !== 1 || mod !== -1 ?
-                    flowerInCart[1] += mod : this.removeFlower(flowerInCart[0]);
+                if (mod === "increment") {
+                    flowerInCart.count++;
+                } else if (mod === "decrement") {
+                    flowerInCart.count--;
+                    if (flowerInCart.count < 1) {
+                        this.removeFlower(flowerInCart);
+                    }
+                }
             }
         },
         buy(): void {
             const flowerStore = useFlowersStore();
             this.flowersInCart.map((flower) => {
-                const flowerInBrowse = flowerStore.getById(flower[0].id);
-                flowerStore.upPopular(flowerInBrowse, flower[1]);
+                const flowerInBrowse = flowerStore.getById(flower.id);
+                flowerStore.upPopular(flowerInBrowse, flower.count);
             });
             this.flowersInCart = [];
         },
     },
     getters: {
-        getItems(): [IFlower, number][] {
+        getItems(): IFlowerCart[] {
             return this.flowersInCart;
         },
         getLength(): number {
@@ -54,15 +62,15 @@ export const useCartStore = defineStore("cart", {
         getTotalPrice(): number {
             let price = 0;
             this.flowersInCart.forEach((i) => {
-                price += i[0].price * i[1];
+                price += i.price * i.count;
             });
             return price;
         },
         getUniqFlowerTotalPrice: (state) => {
             return (flowerToGetPrice: IFlower): number | undefined => {
                 const flower = state.flowersInCart.find((flower) =>
-                    flower[0].id === flowerToGetPrice.id);
-                if (flower) return flower[0].price * flower[1];
+                    flower.id === flowerToGetPrice.id);
+                if (flower) return flower.price * flower.count;
             };
         },
     },
