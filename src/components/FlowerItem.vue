@@ -1,17 +1,18 @@
 <template>
   <div
       v-show="isShowFlowerInShopBySearchedText"
-      class="flower">
+      class="flower"
+  >
     <div class="img-wrapper">
       <!-- Fix: бага с отображение. Критичность: 5 -->
-      <router-link
+      <RouterLink
           class="rt-link"
-          :to="'/shop/flower'+props.flower.id">
+          :to="'/flower/'+props.flower.id">
         <img
             class="flower__img"
             :src="`src/assets/img/flowers/${props.flower.img}`"
             :alt="props.flower.name">
-      </router-link>
+      </RouterLink>
     </div>
     <p class="flower__name">
       {{ props.flower.name }}
@@ -56,7 +57,7 @@ const isShowFlowerInShopBySearchedText = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .rt-link {
   text-decoration: none;
