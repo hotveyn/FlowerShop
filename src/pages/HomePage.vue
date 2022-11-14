@@ -4,7 +4,7 @@
       <!--   Поставить символьный шрифт. Критичность: 1-->
       <h2>Flowers, 🌻 what the world needs </h2>
       <p class="browse__text">
-        Browse between hounders of flowers
+        Browse between hundreds of flowers
       </p>
       <RouterLink to="/shop">
         <button class="browse__button">
