@@ -78,13 +78,16 @@ const regName: Ref<string> = ref("");
 const regPassword: Ref<string> = ref("");
 
 function reg(): void {
-  // Fix: забил на DRY
-  // Fix: пользователь может создать профиль не с уникальной почтой
-  if (regMail.value !== "" && regName.value !== "" && regPassword.value !== "") {
+  const canMakeUser: boolean = regMail.value !== "" && regName.value !== "" && regPassword.value !== ""
+      && usersStore.containUser(regMail.value);
+  if (canMakeUser) {
     usersStore.regUser(regName.value, regMail.value, regPassword.value);
+    [regMail.value, regName.value, regPassword.value] = "";
     router.push("/");
+  } else {
+    [regMail.value, regName.value, regPassword.value] =
+        ["Такой пользователь уже есть", "либо вы не заполнили все поля", ""];
   }
-  [regMail.value, regName.value, regPassword.value] = "";
 }
 
 </script>
