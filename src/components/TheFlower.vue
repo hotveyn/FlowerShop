@@ -3,7 +3,7 @@
       v-show="isShowFlowerInShopBySearchedText"
       class="flower">
     <div class="img-wrapper">
-      <!-- Фикс бага с отображение. Критичность: 3 -->
+      <!-- Fix: бага с отображение. Критичность: 5 -->
       <router-link
           class="rt-link"
           :to="'/shop/flower'+props.flower.id">
