@@ -57,27 +57,43 @@
         </div>
       </div>
     </div>
-    <button
-        class="profile__save-button"
-        @click="changeUserInfo()">
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24">
-        <path
-            d="M5 21h14a2 2 0 0 0 2-2V8a1 1 0 0 0-.29-.71l-4-4A1 1 0 0 0 16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm10-2H9v-5h6zM13 7h-2V5h2zM5 5h2v4h8V5h.59L19 8.41V19h-2v-5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v5H5z"/>
-      </svg>
-      Save
-    </button>
+    <div class="buttons">
+      <button
+          class="profile__save-button"
+          @click="changeUserInfo()">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
+          <path
+              d="M5 21h14a2 2 0 0 0 2-2V8a1 1 0 0 0-.29-.71l-4-4A1 1 0 0 0 16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm10-2H9v-5h6zM13 7h-2V5h2zM5 5h2v4h8V5h.59L19 8.41V19h-2v-5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v5H5z"/>
+        </svg>
+        Save
+      </button>
+      <button
+          class="profile__exit-button"
+          @click="exitFromAuthorizedUser()">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
+          <path
+              d="M5 21h14a2 2 0 0 0 2-2V8a1 1 0 0 0-.29-.71l-4-4A1 1 0 0 0 16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm10-2H9v-5h6zM13 7h-2V5h2zM5 5h2v4h8V5h.59L19 8.41V19h-2v-5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v5H5z"/>
+        </svg>
+        Exit
+      </button>
+
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import {useUsersStore} from "@/stores/users";
 import {Ref, ref} from "vue";
+import {useRouter} from "vue-router";
 
 const userStore = useUsersStore();
 
 const user = userStore.authorizedUser!;
+const router = useRouter();
 
 const userName: Ref<string> = ref(user.username);
 const userPassword: Ref<string> = ref(user.password);
@@ -91,6 +107,11 @@ function changeUserInfo(): void {
   userStore.setAuthorizedUserPhone(userPhone.value!);
   userStore.setAuthorizedUserEmail(userEMail.value);
   userStore.setAuthorizedUserAboutMe(userAbout.value!);
+}
+
+function exitFromAuthorizedUser(): void {
+  router.push("/");
+  userStore.exit();
 }
 </script>
 
@@ -186,35 +207,39 @@ function changeUserInfo(): void {
       }
     }
   }
-
-  .profile__save-button {
-    @include myFlex($jc: center);
+  .buttons{
     align-self: end;
-    margin-top: 30px;
-    gap: 5px;
-    min-width: 163px;
-    padding: 10px 0;
-    border: 2px solid $myOrange;
-    border-radius: 5px;
-    background-color: white;
-    cursor: pointer;
-    font-size: 20px;
-    transition: color 0.2s, fill 0.2s, background-color 0.2s;
-    color: $myOrange;
-
-    svg {
-      width: 30px;
-      fill: $myOrange;
-    }
-
-    &:hover {
-      background-color: $myOrange;
-      color: white;
+    @include myFlex($jc: center);
+    gap: 15px;
+    .profile__save-button, .profile__exit-button {
+      @include myFlex($jc: center);
+      margin-top: 30px;
+      gap: 5px;
+      min-width: 163px;
+      padding: 10px 0;
+      border: 2px solid $myOrange;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 20px;
+      transition: color 0.2s, fill 0.2s, background-color 0.2s;
+      color: $myOrange;
 
       svg {
-        fill: white;
+        width: 30px;
+        fill: $myOrange;
+      }
+
+      &:hover {
+        background-color: $myOrange;
+        color: white;
+
+        svg {
+          fill: white;
+        }
       }
     }
   }
+
 }
 </style>
