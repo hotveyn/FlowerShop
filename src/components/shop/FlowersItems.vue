@@ -1,9 +1,10 @@
 <template>
   <div class="flowers-items">
     <FlowerItem
-        v-for="i in sortedFlowers"
-        :key="i.id"
-        :flower="i"/>
+        v-for="flower in sortedFlowers"
+        :key="flower.id"
+        :flower="flower"
+    />
   </div>
 </template>
 

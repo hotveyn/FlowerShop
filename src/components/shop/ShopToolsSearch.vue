@@ -5,7 +5,8 @@
       class="shop__search"
       type="search"
       name="shop-search"
-      placeholder="Search...">
+      placeholder="Search..."
+  >
 </template>
 
 <script setup lang="ts">
@@ -15,15 +16,10 @@ import {useShopStore} from "@/stores/shop";
 const shopStore = useShopStore();
 
 
-
-// const searchedText:Ref<string> = ref("");
-// watch(searchedText,(newSearchedText)=>{
-//   shopStore.search = newSearchedText;
-// });
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .shop__search {
   width: 500px;

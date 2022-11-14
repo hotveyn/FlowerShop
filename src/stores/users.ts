@@ -2,9 +2,8 @@ import {defineStore} from "pinia";
 import {IUser} from "@/interfaces/IUser";
 
 interface State {
-    users: IUser[];
-    authorizedUser?: IUser,
-
+    users: IUser[],
+    authorizedUser?: IUser
 }
 
 

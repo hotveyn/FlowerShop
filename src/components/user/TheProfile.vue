@@ -1,10 +1,10 @@
 <template>
   <div class="profile-container">
-    <router-link to="/">
+    <RouterLink to="/">
       <button class="home-button">
         Back to home
       </button>
-    </router-link>
+    </RouterLink>
     <TheProfileInfo/>
     <FavoriteFlowers/>
   </div>
@@ -16,7 +16,7 @@ import TheProfileInfo from "@/components/user/TheProfileInfo.vue";
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .profile-container {
   max-width: 1050px;

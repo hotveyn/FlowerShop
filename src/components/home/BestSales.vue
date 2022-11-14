@@ -3,7 +3,8 @@
     <FlowerItem
         v-for="i in sortedFlowersByPopular"
         :key="i.id"
-        :flower="i"/>
+        :flower="i"
+    />
   </div>
 </template>
 

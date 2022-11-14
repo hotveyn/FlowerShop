@@ -2,10 +2,12 @@
   <button
       :class="{'active':shopStore.reverse}"
       class="cheep-button"
-      @click="changeReverse()">
+      @click="changeReverse()"
+  >
     <img
         src="@/assets/icons/cheep.png"
-        alt="cheep">
+        alt="cheep"
+    >
     Reverse
   </button>
 </template>
@@ -25,7 +27,7 @@ function changeReverse(): void {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .cheep-button {
   padding: 10px 15px;

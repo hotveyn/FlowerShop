@@ -3,7 +3,8 @@
     <div class="header-container">
       <RouterLink
           to="/"
-          class="rt-link">
+          class="rt-link"
+      >
         <h1><span class="orange-text">Flower</span> Shop</h1>
       </RouterLink>
       <nav class="nav-bar">
@@ -11,19 +12,22 @@
           <RouterLink
               to="/"
               :class="{'orange-text':route.name === 'home'}"
-              class="rt-link">
+              class="rt-link"
+          >
             <li>Home</li>
           </RouterLink>
           <RouterLink
-              to="/shop"
+              :to="{name: 'shop'}"
               :class="{'orange-text':route.name === 'shop'}"
-              class="rt-link">
+              class="rt-link"
+          >
             <li>Shop</li>
           </RouterLink>
           <RouterLink
               to="/"
               :class="{'orange-text':route.name === 'about'}"
-              class="rt-link">
+              class="rt-link"
+          >
             <li>About</li>
           </RouterLink>
         </ul>
@@ -33,14 +37,16 @@
           <div class="log-button">
             <img
                 src="@/assets/icons/log.svg"
-                alt="log">
+                alt="log"
+            >
           </div>
         </RouterLink>
         <RouterLink to="/cart">
           <div class="cart-button">
             <img
                 src="@/assets/icons/cart.svg"
-                alt="log">
+                alt="log"
+            >
           </div>
         </RouterLink>
       </div>
@@ -63,7 +69,7 @@ const logButtonLink = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .header-container {
 

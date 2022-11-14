@@ -1,10 +1,10 @@
 <template>
   <TheHeader/>
-  <div class="page">
+  <main class="page">
     <div class="page-container">
       <slot/>
     </div>
-  </div>
+  </main>
   <TheFooter/>
 </template>
 

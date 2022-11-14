@@ -1,7 +1,8 @@
 <template>
   <div
       v-if="favoriteFlowers.length"
-      class="fav-flowers">
+      class="fav-flowers"
+  >
     <div class="feed-item__title">
       <hr>
       <h3>Favorite flowers</h3>
@@ -11,7 +12,8 @@
       <FlowerItem
           v-for="flower in favoriteFlowers"
           :key="flower.id"
-          :flower="flower"/>
+          :flower="flower"
+      />
     </div>
   </div>
 </template>
@@ -30,7 +32,7 @@ const favoriteFlowers = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 
 .fav-flowers {

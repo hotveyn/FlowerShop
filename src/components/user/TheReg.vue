@@ -4,7 +4,7 @@
     <div class="reg__form">
       <div class="reg__title">
         <h2>Register</h2>
-        <router-link
+        <RouterLink
             class="rt-link"
             to="/">
           <button class="reg__home">
@@ -13,7 +13,7 @@
                 alt="home">
             Back to home
           </button>
-        </router-link>
+        </RouterLink>
       </div>
       <p class="reg__phrase">
         Register and help us help you
@@ -49,11 +49,11 @@
       </button>
       <p class="reg__already">
         Already have an account?
-        <router-link
+        <RouterLink
             to="/login"
             class="rt-link">
           Login
-        </router-link>
+        </RouterLink>
       </p>
     </div>
     <div class="reg__img-wrapper">
@@ -73,7 +73,7 @@ const usersStore = useUsersStore();
 
 const router = useRouter();
 
-const regMail: Ref<string> = ref("");
+const regMail= ref<string>("");
 const regMailPlaceholder: Ref<string> = ref("Email");
 const regName: Ref<string> = ref("");
 const regNamePlaceholder: Ref<string> = ref("Username");
@@ -96,7 +96,7 @@ function reg(): void {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 
 .log {

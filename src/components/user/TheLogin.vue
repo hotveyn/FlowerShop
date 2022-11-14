@@ -5,16 +5,18 @@
       <div>
         <div class="log__title">
           <h2>Login</h2>
-          <router-link
+          <RouterLink
               class="rt-link"
-              to="/">
+              to="/"
+          >
             <button class="log__home">
               <img
                   src="@/assets/icons/home.svg"
-                  alt="home">
+                  alt="home"
+              >
               Back to home
             </button>
-          </router-link>
+          </RouterLink>
         </div>
         <p class="log__phrase">
           Login and have more fun
@@ -23,26 +25,30 @@
             v-model="logName"
             :placeholder="usernamePlaceholder"
             type="text"
-            class="log__username-input">
+            class="log__username-input"
+        >
         <input
             v-model.trim="logPassword"
             type="password"
             :placeholder="passwordPlaceholder"
-            class="log__password-input">
+            class="log__password-input"
+        >
         <button
             class="log__button"
-            @click="login()">
+            @click="login()"
+        >
           Login
         </button>
       </div>
       <div>
         <p class="log__already">
           dont have an account?
-          <router-link
+          <RouterLink
               to="/registration"
-              class="rt-link">
+              class="rt-link"
+          >
             Register
-          </router-link>
+          </RouterLink>
         </p>
       </div>
     </div>
@@ -50,7 +56,8 @@
       <img
           class="log__img"
           src="@/assets/img/login.png"
-          alt="log">
+          alt="log"
+      >
     </div>
   </div>
 </template>
@@ -87,7 +94,7 @@ function login(): void {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 
 .log {

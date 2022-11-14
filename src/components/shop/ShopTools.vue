@@ -14,7 +14,7 @@ import ShopToolsRevers from "@/components/shop/ShopToolsRevers.vue";
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .shop__tools {
   @include myFlex();

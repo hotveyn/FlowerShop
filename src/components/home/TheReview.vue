@@ -4,7 +4,8 @@
       <img
           :src="`src/assets/img/avatars/${props.review.img}`"
           :alt="props.review.name"
-          class="review__avatar">
+          class="review__avatar"
+      >
       <div class="review__info">
         <p class="review__name">
           {{ props.review.name }}
@@ -17,12 +18,14 @@
               v-for="i in props.review.stars"
               :key="i"
               src="@/assets/icons/star.png"
-              alt="start">
+              alt="start"
+          >
           <img
               v-for="i in 5 - props.review.stars"
               :key="i"
               src="@/assets/icons/starEmpty.png"
-              alt="start">
+              alt="start"
+          >
         </div>
       </div>
     </div>
@@ -39,7 +42,7 @@ const props = defineProps<{
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .review {
   @include myFlex($ai: start);

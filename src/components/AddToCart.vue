@@ -14,9 +14,6 @@
 import {IFlower} from "@/interfaces/IFlower";
 import {useCartStore} from "@/stores/cart";
 import {ref} from "vue";
-// import {useFlowersStore} from "@/stores/flowers";
-
-// const flowerStore = useFlowersStore();
 const cartStore = useCartStore();
 
 const props = defineProps<{
@@ -34,14 +31,13 @@ function warnDisabled() {
 }
 
 function toCart() {
-  // flowerStore.upFlowerPopularRate(props.flowerToBut);
   cartStore.addNewFlower(props.flower);
   warnDisabled();
 }
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .buy__price {
   font-size: 18px;

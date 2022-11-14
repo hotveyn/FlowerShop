@@ -6,31 +6,37 @@
       <p class="browse__text">
         Browse between hounders of flowers
       </p>
-      <router-link to="/shop">
+      <RouterLink to="/shop">
         <button class="browse__button">
           Browse
         </button>
-      </router-link>
+      </RouterLink>
     </div>
     <div class="flowers">
       <img
           src="@/assets/img/flower1.png"
-          alt="flower1">
+          alt="flower1"
+      >
       <img
           src="@/assets/img/flower2.png"
-          alt="flower2">
+          alt="flower2"
+      >
       <img
           src="@/assets/img/flower3.png"
-          alt="flower3">
+          alt="flower3"
+      >
       <img
           src="@/assets/img/flower4.png"
-          alt="flower4">
+          alt="flower4"
+      >
       <img
           src="@/assets/img/flower5.png"
-          alt="flower5">
+          alt="flower5"
+      >
       <img
           src="@/assets/img/flower6.png"
-          alt="flower6">
+          alt="flower6"
+      >
     </div>
   </section>
   <section class="best feed-item">
@@ -57,7 +63,7 @@ import LatestReviews from "@/components/home/LatestReviews.vue";
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .welcome {
   @include myFlex($ai: start);
@@ -71,13 +77,13 @@ import LatestReviews from "@/components/home/LatestReviews.vue";
       margin-bottom: 30px;
     }
 
-    .browse__text {
+    &__text {
       color: rgba(131, 131, 131, 1);
       font-size: 20px;
       margin-bottom: 45px;
     }
 
-    .browse__button {
+    &__button {
       border: 2px solid $myOrange;
       border-radius: 5px;
       width: 100px;

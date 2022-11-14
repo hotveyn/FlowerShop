@@ -3,7 +3,8 @@
     <TheReview
         v-for="i in latestReviews"
         :key="i.id"
-        :review="i"/>
+        :review="i"
+    />
   </div>
 </template>
 

@@ -80,8 +80,7 @@
         </svg>
         Exit
       </button>
-
-    </div>
+</div>
   </div>
 </template>
 
@@ -116,7 +115,7 @@ function exitFromAuthorizedUser(): void {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .profile {
   background-color: white;

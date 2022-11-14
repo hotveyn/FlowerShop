@@ -3,15 +3,18 @@
     <button
         :class="{'button-border':isRadioShow}"
         class="shop__filter shop__button"
-        @click="showSort()">
+        @click="showSort()"
+    >
       <img
           src="@/assets/icons/filter.png"
-          alt="filter">
+          alt="filter"
+      >
       Sorting
     </button>
     <div
         v-show="isRadioShow"
-        class="radio-button-group">
+        class="radio-button-group"
+    >
       <label>
         <input
             v-model="sortMod"
@@ -19,7 +22,8 @@
             name="category"
             value="Name"
             class="real-radio"
-            checked>
+            checked
+        >
         <span class="custom-radio"/>
         Name
       </label>
@@ -29,7 +33,8 @@
             type="radio"
             name="category"
             value="Rate"
-            class="real-radio">
+            class="real-radio"
+        >
         <span class="custom-radio"/>
         Rate
       </label>
@@ -39,7 +44,8 @@
             type="radio"
             name="category"
             value="Popular"
-            class="real-radio">
+            class="real-radio"
+        >
         <span class="custom-radio"/>
         Popular
       </label>
@@ -49,7 +55,8 @@
             type="radio"
             name="category"
             value="Price"
-            class="real-radio">
+            class="real-radio"
+        >
         <span class="custom-radio"/>
         Price
       </label>
@@ -82,7 +89,7 @@ watch(sortMod, (newFilterMod: SortType) => {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .filter {
   @include myFlex();

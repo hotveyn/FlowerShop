@@ -1,17 +1,20 @@
 <template>
   <div class="cart-container">
     <div
-        v-if="cartLen"
-        class="cart-full">
+        v-if="cartStore.getLength"
+        class="cart-full"
+    >
       <CartFlowers/>
       <CartBuy/>
     </div>
     <div
         v-else
-        class="cart-empty">
+        class="cart-empty"
+    >
       <img
           src="@/assets/img/cartEmpty.png"
-          alt="cart empty">
+          alt="cart empty"
+      >
     </div>
   </div>
 </template>
@@ -20,18 +23,15 @@
 import {useCartStore} from "@/stores/cart";
 import CartFlowers from "@/components/cart/CartFlowers.vue";
 import CartBuy from "@/components/cart/CartBuy.vue";
-import {computed} from "vue";
+
 
 const cartStore = useCartStore();
 
-const cartLen = computed(() => {
-  return cartStore.getLength;
-});
 
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .cart-container {
   max-width: 1200px;

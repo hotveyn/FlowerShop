@@ -11,11 +11,10 @@ import FlowersItems from "@/components/shop/FlowersItems.vue";
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .shop {
   @include myFlex($fd: column);
   font-family: Roboto, sans-serif;
-
 }
 </style>
