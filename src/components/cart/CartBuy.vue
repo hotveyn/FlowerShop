@@ -1,9 +1,12 @@
 <template>
   <div class="buy">
     <p class="subtotal">
-      Subtotal for {{ cartLength }} items: <span class="total">{{ totalPrice }}$</span>
+      Subtotal for {{ cartLength }} items:
+      <span class="total">
+        {{ totalPrice }}$
+      </span>
     </p>
-    <button @click="buy()">
+    <button @click="buy">
       Checkout
     </button>
   </div>
@@ -31,7 +34,7 @@ function buy() {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 
 .buy {

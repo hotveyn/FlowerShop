@@ -1,10 +1,10 @@
 <template>
   <div class="flower-full">
-    <router-link to="/shop">
+    <RouterLink to="/shop">
       <button class="back-button">
         Back to shopping
       </button>
-    </router-link>
+    </RouterLink>
     <div class="flower">
       <img
           class="flower__img"
@@ -15,6 +15,7 @@
           <h2 class="flower__name">
             {{ flower.name }}
           </h2>
+
           <p class="flower__description">
             {{ flower.description }}
           </p>
@@ -69,7 +70,7 @@ const flowerReviewLength = computed((): number => {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .flower-full {
   @include myFlex($ai: start, $fd: column);

@@ -3,26 +3,29 @@
     <div class="flower__img-wrapper">
       <img
           class="flower__img"
-          :src="`src/assets/img/flowers/${flowerCart[0].img}`"
-          alt="flower">
+          :src="`src/assets/img/flowers/${flowerCart.img}`"
+          alt="flower"
+      >
     </div>
     <div class="flower__info">
       <div class="flower__title-info">
-        <h3>{{ flowerCart[0].name }}</h3>
+        <h3>{{ flowerCart.name }}</h3>
         <button
             class="flower__delete"
-            @click="deleteFlower()">
+            @click="deleteFlower()"
+        >
           <img
               src="src/assets/icons/delete.svg"
-              alt="delete">
+              alt="delete"
+          >
         </button>
       </div>
       <div class="flower__prices">
         <p class="flower__unit-price">
-          unit price {{ flowerCart[0].price }}$
+          unit price {{ flowerCart.price }}$
         </p>
         <div>
-          <CartFlowerCounter :flower-cart="props.flowerCart"/>
+          <CartFlowerCounter :flower-cart="flowerCart"/>
           <p class="flower__total-uniq-price">
             Total {{ flowerTotalPrice }}$
           </p>
@@ -34,28 +37,25 @@
 
 <script setup lang="ts">
 import CartFlowerCounter from "@/components/cart/CartFlowerCounter.vue";
+import {IFlowerCart} from "@/interfaces/IFlowerCart";
 import {useCartStore} from "@/stores/cart";
-import {IFlower} from "@/interfaces/IFlower";
-import {computed} from "vue";
 
 const cartStore = useCartStore();
 
 const props = defineProps<{
-  flowerCart: [IFlower, number];
+  flowerCart: IFlowerCart;
 }>();
 
 
 function deleteFlower() {
-  cartStore.removeFlower(props.flowerCart[0]);
+  cartStore.removeFlower(props.flowerCart);
 }
 
-const flowerTotalPrice = computed(() => {
-  return cartStore.getUniqFlowerTotalPrice(props.flowerCart[0]);
-});
+const flowerTotalPrice = cartStore.getUniqFlowerTotalPrice(props.flowerCart);
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .cart__flower {
   @include myFlex();

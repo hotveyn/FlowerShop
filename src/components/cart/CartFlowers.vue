@@ -4,8 +4,9 @@
     <div class="cart__flowers">
       <CartFlower
           v-for="flower in flowers"
-          :key="flower[0].id"
-          :flower-cart="flower"/>
+          :key="flower.id"
+          :flower-cart="flower"
+      />
     </div>
   </div>
 </template>
@@ -23,7 +24,7 @@ const flowers = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .cart {
   max-width: 790px;

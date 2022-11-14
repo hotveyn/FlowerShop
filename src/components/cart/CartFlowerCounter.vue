@@ -2,42 +2,43 @@
   <div class="counter">
     <button
         class="counter__minus"
-        @click="changeValue(-1)">
+        @click="cartStore.changeFlowerCount(props.flowerCart, 'decrement')"
+    >
       <img
           src="@/assets/icons/minus.svg"
-          alt="minus">
+          alt="minus"
+      >
     </button>
     <p class="counter__value">
-      {{ flowerCart[1] }}
+      {{ flowerCart.count }}
     </p>
     <button
         class="counter__plus"
-        @click="changeValue(1)">
+        @click="cartStore.changeFlowerCount(props.flowerCart, 'increment')"
+    >
       <img
           src="@/assets/icons/plus.svg"
-          alt="minus">
+          alt="minus"
+      >
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import {IFlower} from "@/interfaces/IFlower";
+import {IFlowerCart} from "@/interfaces/IFlowerCart";
 import {useCartStore} from "@/stores/cart";
 
 const props = defineProps<{
-  flowerCart: [IFlower, number];
+  flowerCart: IFlowerCart;
 }>();
 
 const cartStore = useCartStore();
 
-function changeValue(mod: 1 | -1): void {
-  cartStore.changeFlowerCount(props.flowerCart[0], mod);
-}
 
 </script>
 
 <style scoped lang="scss">
-@import "@/mixins.scss";
+@import "@/assets/css/mixins.scss";
 
 .counter {
   width: 70px;
