@@ -19,8 +19,8 @@ const routes: RouteRecordRaw[] = [
         component: ShopPage,
     },
     {
-        path: "/shop/flower:id",
-        name: "flower:id",
+        path: "/flower/:id",
+        name: "flower",
         component: FlowerInDetail,
     },
     {
