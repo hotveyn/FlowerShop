@@ -14,27 +14,27 @@
     </div>
     <div class="flowers">
       <img
-          src="@/assets/img/flower1.png"
+          src="/img/flower1.png"
           alt="flower1"
       >
       <img
-          src="@/assets/img/flower2.png"
+          src="/img/flower2.png"
           alt="flower2"
       >
       <img
-          src="@/assets/img/flower3.png"
+          src="/img/flower3.png"
           alt="flower3"
       >
       <img
-          src="@/assets/img/flower4.png"
+          src="/img/flower4.png"
           alt="flower4"
       >
       <img
-          src="@/assets/img/flower5.png"
+          src="/img/flower5.png"
           alt="flower5"
       >
       <img
-          src="@/assets/img/flower6.png"
+          src="/img/flower6.png"
           alt="flower6"
       >
     </div>

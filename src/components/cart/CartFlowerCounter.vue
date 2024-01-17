@@ -5,7 +5,7 @@
         @click="cartStore.changeFlowerCount(props.flowerCart, 'decrement')"
     >
       <img
-          src="@/assets/icons/minus.svg"
+          src="/icons/minus.svg"
           alt="minus"
       >
     </button>
@@ -17,7 +17,7 @@
         @click="cartStore.changeFlowerCount(props.flowerCart, 'increment')"
     >
       <img
-          src="@/assets/icons/plus.svg"
+          src="/icons/plus.svg"
           alt="minus"
       >
     </button>

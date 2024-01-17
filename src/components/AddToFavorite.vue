@@ -5,7 +5,7 @@
       @click="makeFavorite()"
   >
     <img
-        src="@/assets/icons/like.svg"
+        src="/icons/like.svg"
         alt="like"
     >
     Add to favorite

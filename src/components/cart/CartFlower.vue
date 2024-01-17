@@ -3,7 +3,7 @@
     <div class="flower__img-wrapper">
       <img
           class="flower__img"
-          :src="`src/assets/img/flowers/${flowerCart.img}`"
+          :src="`/img/flowers//${flowerCart.img}`"
           alt="flower"
       >
     </div>
@@ -15,7 +15,7 @@
             @click="deleteFlower()"
         >
           <img
-              src="src/assets/icons/delete.svg"
+              src="../../../public/icons/delete.svg"
               alt="delete"
           >
         </button>

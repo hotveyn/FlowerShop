@@ -6,7 +6,7 @@
         @click="showSort()"
     >
       <img
-          src="@/assets/icons/filter.png"
+          src="/icons/filter.png"
           alt="filter"
       >
       Sorting

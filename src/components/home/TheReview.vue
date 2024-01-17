@@ -2,7 +2,7 @@
   <div class="review-wrapper">
     <div class="review">
       <img
-          :src="`src/assets/img/avatars/${props.review.img}`"
+          :src="`/img/avatars/${props.review.img}`"
           :alt="props.review.name"
           class="review__avatar"
       >
@@ -17,13 +17,13 @@
           <img
               v-for="i in props.review.stars"
               :key="i"
-              src="@/assets/icons/star.png"
+              src="/icons/star.png"
               alt="start"
           >
           <img
               v-for="i in 5 - props.review.stars"
               :key="i"
-              src="@/assets/icons/starEmpty.png"
+              src="/icons/starEmpty.png"
               alt="start"
           >
         </div>

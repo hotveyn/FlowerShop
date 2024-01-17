@@ -5,7 +5,7 @@
       @click="changeReverse()"
   >
     <img
-        src="@/assets/icons/cheep.png"
+        src="/icons/cheep.png"
         alt="cheep"
     >
     Reverse

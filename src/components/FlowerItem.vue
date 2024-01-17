@@ -10,7 +10,7 @@
           :to="'/flower/'+props.flower.id">
         <img
             class="flower__img"
-            :src="`src/assets/img/flowers/${props.flower.img}`"
+            :src="`/img/flowers//${props.flower.img}`"
             :alt="props.flower.name">
       </RouterLink>
     </div>

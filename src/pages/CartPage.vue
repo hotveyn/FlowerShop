@@ -12,7 +12,7 @@
         class="cart-empty"
     >
       <img
-          src="@/assets/img/cartEmpty.png"
+          src="/img/cartEmpty.png"
           alt="cart empty"
       >
     </div>

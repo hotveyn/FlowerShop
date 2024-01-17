@@ -4,7 +4,7 @@
       @click="toCart()">
     <img
         :class="{'bought': disabled}"
-        src="@/assets/icons/cart.svg"
+        src="/icons/cart.svg"
         alt="cart">
     Add to cart
   </button>

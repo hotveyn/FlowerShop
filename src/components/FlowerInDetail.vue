@@ -8,7 +8,7 @@
     <div class="flower">
       <img
           class="flower__img"
-          :src="'/src/assets/img/flowers/'+flower.img"
+          :src="'/img/flowers/'+flower.img"
           alt="flower">
       <div class="flower__info">
         <div class="desc">
@@ -22,7 +22,7 @@
           <div class="flower__rate">
             <div class="stars">
               <img
-                  src="@/assets/icons/star.png"
+                  src="/icons/star.png"
                   alt="start">
               <p class="flower__rate-number">
                 {{ flower.rate }}/5

@@ -36,7 +36,7 @@
         <RouterLink :to="logButtonLink">
           <div class="log-button">
             <img
-                src="@/assets/icons/log.svg"
+                src="/icons/log.svg"
                 alt="log"
             >
           </div>
@@ -44,7 +44,7 @@
         <RouterLink to="/cart">
           <div class="cart-button">
             <img
-                src="@/assets/icons/cart.svg"
+                src="/icons/cart.svg"
                 alt="log"
             >
           </div>

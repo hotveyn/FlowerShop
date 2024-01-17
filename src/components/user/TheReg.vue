@@ -9,7 +9,7 @@
             to="/">
           <button class="reg__home">
             <img
-                src="@/assets/icons/home.svg"
+                src="/icons/home.svg"
                 alt="home">
             Back to home
           </button>
@@ -59,7 +59,7 @@
     <div class="reg__img-wrapper">
       <img
           class="reg__img"
-          src="@/assets/img/reg.png"
+          src="/img/reg.png"
           alt="reg">
     </div>
   </div>

@@ -116,19 +116,19 @@ const links = reactive({home: "Home", shop: "Shop", login: "Login", registration
       }
 
       .contact__address::before {
-        content: url("@/assets/icons/map.png");
+        content: url("/icons/map.png");
         position: absolute;
         left: -30px;
       }
 
       .contact__mail::before {
-        content: url("@/assets/icons/mail.png");
+        content: url("/icons/mail.png");
         position: absolute;
         left: -30px;
       }
 
       .contact__phone::before {
-        content: url("@/assets/icons/phone.png");
+        content: url("/icons/phone.png");
         position: absolute;
         left: -30px;
       }

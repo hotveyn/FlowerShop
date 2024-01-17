@@ -11,7 +11,7 @@
           >
             <button class="log__home">
               <img
-                  src="@/assets/icons/home.svg"
+                  src="/icons/home.svg"
                   alt="home"
               >
               Back to home
@@ -55,7 +55,7 @@
     <div class="log__img-wrapper">
       <img
           class="log__img"
-          src="@/assets/img/login.png"
+          src="/img/login.png"
           alt="log"
       >
     </div>
